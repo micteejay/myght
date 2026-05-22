@@ -60,6 +60,7 @@ function Index() {
             <a href="#pricing" className="hover:text-foreground transition">Pricing</a>
             <a href="#faq" className="hover:text-foreground transition">FAQ</a>
             <a href="/diabetes" className="hover:text-foreground transition">Diabetes</a>
+            <a href="/hypertension" className="hover:text-foreground transition">Hypertension</a>
           </nav>
           <a href={ORDER_URL} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition">

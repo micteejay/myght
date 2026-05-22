@@ -9,9 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as HypertensionRouteImport } from './routes/hypertension'
 import { Route as DiabetesRouteImport } from './routes/diabetes'
 import { Route as IndexRouteImport } from './routes/index'
 
+const HypertensionRoute = HypertensionRouteImport.update({
+  id: '/hypertension',
+  path: '/hypertension',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DiabetesRoute = DiabetesRouteImport.update({
   id: '/diabetes',
   path: '/diabetes',
@@ -26,31 +32,42 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/diabetes': typeof DiabetesRoute
+  '/hypertension': typeof HypertensionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/diabetes': typeof DiabetesRoute
+  '/hypertension': typeof HypertensionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/diabetes': typeof DiabetesRoute
+  '/hypertension': typeof HypertensionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/diabetes'
+  fullPaths: '/' | '/diabetes' | '/hypertension'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/diabetes'
-  id: '__root__' | '/' | '/diabetes'
+  to: '/' | '/diabetes' | '/hypertension'
+  id: '__root__' | '/' | '/diabetes' | '/hypertension'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DiabetesRoute: typeof DiabetesRoute
+  HypertensionRoute: typeof HypertensionRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/hypertension': {
+      id: '/hypertension'
+      path: '/hypertension'
+      fullPath: '/hypertension'
+      preLoaderRoute: typeof HypertensionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/diabetes': {
       id: '/diabetes'
       path: '/diabetes'
@@ -71,6 +88,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DiabetesRoute: DiabetesRoute,
+  HypertensionRoute: HypertensionRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

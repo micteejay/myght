@@ -1,65 +1,72 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Check, ShieldCheck, Leaf, Phone, MessageCircle, Star, ArrowRight, Sparkles, Droplet, HeartPulse, Activity, FlaskConical, Pill } from "lucide-react";
-import hero from "@/assets/diabetes-hero.jpg";
-import bottles from "@/assets/diabetes-bottles.jpg";
+import { Check, ShieldCheck, Leaf, Phone, MessageCircle, Star, ArrowRight, Sparkles, HeartPulse, Activity, Brain, Pill, AlertTriangle } from "lucide-react";
+import hero from "@/assets/hypertension-hero.jpg";
+import bottles from "@/assets/hypertension-bottles.jpg";
 
-export const Route = createFileRoute("/diabetes")({
-  component: DiabetesPage,
+export const Route = createFileRoute("/hypertension")({
+  component: HypertensionPage,
   head: () => ({
     meta: [
-      { title: "Restore Your Sugar Level — Natural Diabetes Care | GHT" },
-      { name: "description", content: "A clinically inspired herbal protocol — DIALESE, MYCO-BALANCE Softgel and CAERITE — for Type 1, Type 2 and prediabetes management. 100% herbal, no chemicals." },
-      { property: "og:title", content: "Restore Your Sugar Level — Natural Diabetes Care" },
-      { property: "og:description", content: "Step toward balanced blood sugar with a 3-part herbal protocol trusted by 11,000+ customers." },
+      { title: "Lower Your Blood Pressure Naturally — HYPERFREE & CAERITE | GHT" },
+      { name: "description", content: "Control hypertension and high blood pressure naturally with HYPERFREE + CAERITE — a 100% herbal protocol, no Lisinopril or Amlodipine needed." },
+      { property: "og:title", content: "Natural Herbal Remedy for Hypertension — GHT" },
+      { property: "og:description", content: "HYPERFREE and CAERITE: a plant-based pathway to balanced blood pressure and a stronger heart." },
+      { property: "og:image", content: hero },
     ],
   }),
 });
 
-const ORDER_URL = "https://docs.google.com/forms/d/e/1FAIpQLScEeOn5IjTHbqMSxiUgsdoAeerP8qoalzY0OQF1EzcLMVeiAA/viewform";
+const ORDER_URL = "https://docs.google.com/forms/d/e/1FAIpQLScVxm7294TuXCZ9it5eodzNVkDE1Q-FTwhvjJxDU77J8hcQEg/viewform";
 const WA_URL = "https://wa.me/2349131541263";
 
-const symptoms = [
-  "Frequent urination",
-  "Excessive thirst & dry mouth",
-  "Increased hunger after eating",
-  "Unexplained weight loss",
-  "Blurred vision",
-  "Fatigue & weakness",
-  "Slow-healing wounds",
-  "Tingling in hands & feet",
-  "Frequent infections",
+const dangers = [
+  { i: HeartPulse, t: "Heart damage", d: "Constant pressure thickens the heart muscle, leading to failure, arrhythmia and cardiac arrest." },
+  { i: Brain, t: "Brain & stroke", d: "Weakens brain vessels — raising risk of stroke, dementia and cognitive decline." },
+  { i: Activity, t: "Kidney failure", d: "Damages renal vessels, driving chronic kidney disease and eventual failure." },
+  { i: AlertTriangle, t: "Artery hardening", d: "Atherosclerosis narrows arteries, fueling aneurysms and heart attacks." },
 ];
 
-const types = [
-  { n: "01", t: "Type 1", d: "Autoimmune. The body attacks insulin-producing cells. Often appears in youth — requires lifelong insulin." },
-  { n: "02", t: "Type 2", d: "Insulin resistance. Most common form, often tied to lifestyle. Reversible at early stages." },
-  { n: "03", t: "Gestational", d: "Develops in pregnancy from hormonal shifts. Usually resolves after birth — but raises future Type 2 risk." },
-  { n: "04", t: "Prediabetes", d: "Sugar runs higher than normal, not yet diabetic. The window where lifestyle change reverses everything." },
+const symptoms = [
+  "Persistent headaches",
+  "Chest tightness or palpitations",
+  "Dizziness or blurred vision",
+  "Shortness of breath",
+  "Ringing in the ears",
+  "Nosebleeds",
+  "Anxiety & restlessness",
+  "Fatigue & weakness",
+  "Swollen ankles",
+];
+
+const causes = [
+  { n: "01", t: "Primary", d: "90–95% of cases. Develops gradually with age, family history, weight, salt intake, alcohol, smoking and chronic stress." },
+  { n: "02", t: "Secondary", d: "Caused by kidney disease, thyroid issues, sleep apnea, certain medications or pregnancy-related conditions." },
+  { n: "03", t: "Lifestyle", d: "Sedentary days, processed diets low in potassium and high in sodium, and poor sleep keep pressure elevated." },
+  { n: "04", t: "Hidden", d: "Vitamin D deficiency, insulin resistance, chronic pain, anxiety and depression all quietly raise the baseline." },
 ];
 
 const protocol = [
-  { i: Droplet, t: "DIALESE", s: "Natural Blood Sugar & Pressure Control", b: ["Dilates blood vessels and eases circulation", "Calms stress-induced spikes", "Lowers systolic and diastolic levels gently", "Relieves chest tightness, dizziness and palpitations"] },
-  { i: FlaskConical, t: "MYCO-BALANCE", s: "Cellular Support & Detoxification", b: ["Medicinal mushrooms detox liver and kidneys", "Reduces internal inflammation", "Repairs arterial wall damage", "Strengthens immune defense and energy"] },
-  { i: HeartPulse, t: "CAERITE", s: "Heart & Artery Protector", b: ["Strengthens heart muscle and pumping", "Improves circulation and oxygenation", "Lowers LDL cholesterol and plaque", "Restores arterial elasticity"] },
+  { i: HeartPulse, t: "HYPERFREE", s: "Pressure control & heart protection", b: ["Relaxes and dilates blood vessels", "Lowers systolic and diastolic levels", "Eases headaches, tightness and dizziness", "Supports kidney function, reduces fluid retention", "Calms stress-induced spikes"] },
+  { i: Pill, t: "CAERITE", s: "Cardio-protective & cholesterol balance", b: ["Strengthens the heart muscle", "Lowers LDL, raises HDL cholesterol", "Detoxifies blood, keeps arteries elastic", "Prevents clotting, supports circulation", "Protects against stroke and heart attack"] },
 ];
 
 const packs = [
-  { d: "15 days", b: 3, was: "75,000", now: "65,000" },
-  { d: "30 days", b: 6, was: "130,000", now: "122,000", tag: "Most Chosen" },
-  { d: "45 days", b: 9, was: "180,000", now: "168,500", tag: "Full Protocol" },
+  { d: "15 days", b: 3, was: "70,500", now: "60,500" },
+  { d: "30 days", b: 6, was: "130,500", now: "115,000", tag: "Most Chosen" },
+  { d: "45 days", b: 9, was: "190,500", now: "170,000", tag: "Full Protocol" },
 ];
 
 const faqs = [
-  { q: "Does the product really work?", a: "Yes. Over 11,500 customers have used it with positive reports. Most see clear results within one pack." },
-  { q: "Are there side effects?", a: "None. The protocol is 99% pure herbal and plant extract — no synthetic chemicals." },
-  { q: "How many packs will I need?", a: "One pack is enough for most. Critical or long-standing cases benefit from 2–3 months — bundle pricing reflects that." },
-  { q: "Will it reverse my diabetes?", a: "In most cases, yes. The herbal protocol restores insulin sensitivity and supports pancreas function over time." },
-  { q: "How do I use the pack?", a: "Once delivered, a personalized guide with food tips is sent via WhatsApp, email or SMS. Phone monitoring is included." },
-  { q: "Can I combine with my current drugs?", a: "No. Use the protocol alone to see its true effectiveness." },
-  { q: "Is it NAFDAC / FDA approved?", a: "Yes. Registration number is printed on every product package." },
+  { q: "Does the product really work?", a: "Yes — with a 99% success rate. Over 113,000 customers have testified to results." },
+  { q: "Any side effects?", a: "None. HYPERFREE and CAERITE are a 99% pure herbal and plant-extract blend. No synthetic chemicals." },
+  { q: "How many packs do I need?", a: "Two packs cover most cases. Critical or long-standing hypertension benefits from 2–3 months — that's why bundle pricing exists." },
+  { q: "Will it reverse my hypertension?", a: "Yes. The protocol restores vessel elasticity and regulates pressure from the root cause." },
+  { q: "How do I use the pack?", a: "Once delivered, a personalized guide and food tips are sent via WhatsApp, email or SMS, with phone monitoring throughout." },
+  { q: "Can I combine with my current drugs?", a: "No. Use the protocol alone so its effectiveness is fully visible." },
+  { q: "Is it NAFDAC / FDA approved?", a: "Yes — 100% registered. The registration number is printed on every package." },
 ];
 
-function DiabetesPage() {
+function HypertensionPage() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* Nav */}
@@ -73,8 +80,8 @@ function DiabetesPage() {
           </Link>
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <Link to="/" className="hover:text-foreground transition">Prostate</Link>
-            <Link to="/diabetes" className="text-foreground font-medium">Diabetes</Link>
-            <Link to="/hypertension" className="hover:text-foreground transition">Hypertension</Link>
+            <Link to="/diabetes" className="hover:text-foreground transition">Diabetes</Link>
+            <Link to="/hypertension" className="text-foreground font-medium">Hypertension</Link>
             <a href="#protocol" className="hover:text-foreground transition">Protocol</a>
             <a href="#pricing" className="hover:text-foreground transition">Pricing</a>
             <a href="#faq" className="hover:text-foreground transition">FAQ</a>
@@ -89,20 +96,20 @@ function DiabetesPage() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-soft)" }} />
-        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full -z-10 opacity-40 blur-3xl" style={{ background: "var(--gradient-hero)" }} />
+        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full -z-10 opacity-40 blur-3xl" style={{ background: "var(--gradient-hero)" }} />
 
         <div className="max-w-7xl mx-auto px-6 pt-16 pb-24 grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-4 py-1.5 text-xs font-medium text-muted-foreground mb-8">
               <Sparkles className="w-3.5 h-3.5 text-accent" />
-              For Type 1, Type 2 & Prediabetes · 11,500+ users
+              No Lisinopril · No Amlodipine · 113,000+ users
             </div>
             <h1 className="font-display text-5xl md:text-7xl font-semibold leading-[1.02] tracking-tight">
-              Balance your sugar.<br />
-              <span className="italic text-accent">Walk away</span> from insulin.
+              Quiet the<br />
+              <span className="italic text-accent">silent killer.</span>
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
-              Diabetes is silent — until it isn't. Our 3-part herbal protocol works with your body to restore insulin sensitivity, repair vessels and rebuild metabolic balance. Naturally.
+              Hypertension damages organs long before you feel it. HYPERFREE and CAERITE work in tandem to relax vessels, strengthen the heart and bring pressure back to where it belongs — naturally.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <a href="#pricing" className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-[var(--shadow-elegant)] hover:-translate-y-0.5 transition">
@@ -114,12 +121,12 @@ function DiabetesPage() {
             </div>
             <div className="mt-10 grid grid-cols-3 gap-6 max-w-md">
               <div>
-                <div className="font-display text-3xl font-semibold text-accent">11.5k+</div>
+                <div className="font-display text-3xl font-semibold text-accent">113k+</div>
                 <div className="text-xs text-muted-foreground mt-1">Customers served</div>
               </div>
               <div>
                 <div className="font-display text-3xl font-semibold text-accent">99%</div>
-                <div className="text-xs text-muted-foreground mt-1">Reported results</div>
+                <div className="text-xs text-muted-foreground mt-1">Success rate</div>
               </div>
               <div>
                 <div className="font-display text-3xl font-semibold text-accent">0</div>
@@ -130,36 +137,38 @@ function DiabetesPage() {
 
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-[var(--shadow-elegant)]">
-              <img src={hero} alt="Herbs and glucose meter — natural diabetes care" width={1280} height={1280} className="w-full h-auto object-cover aspect-square" />
+              <img src={hero} alt="Blood pressure monitor with hibiscus and herbs" width={1280} height={1280} className="w-full h-auto object-cover aspect-square" />
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-card rounded-2xl shadow-[var(--shadow-card)] p-5 max-w-[260px] border border-border">
+            <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl shadow-[var(--shadow-card)] p-5 max-w-[260px] border border-border">
               <div className="flex items-center gap-2 mb-2">
                 <ShieldCheck className="w-4 h-4 text-accent" />
                 <span className="text-xs font-medium uppercase tracking-wider text-accent">NAFDAC approved</span>
               </div>
-              <p className="text-sm font-medium leading-snug">Registered formula. Safe for long-term use under guidance.</p>
+              <p className="text-sm font-medium leading-snug">Plant-based formula. Safe for long-term, monitored use.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* TYPES */}
+      {/* DANGERS */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
             <div className="max-w-2xl">
-              <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">Know your diagnosis</p>
-              <h2 className="font-display text-4xl md:text-5xl font-semibold">Four forms. One protocol that meets you where you are.</h2>
+              <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">Why hypertension is dangerous</p>
+              <h2 className="font-display text-4xl md:text-5xl font-semibold">It strikes quietly. Then everything at once.</h2>
             </div>
-            <p className="text-muted-foreground max-w-md">Whether you're newly diagnosed, insulin-dependent, or watching prediabetes numbers creep up — relief begins with understanding.</p>
+            <p className="text-muted-foreground max-w-md">Most people don't know they have it until a stroke, heart attack or kidney crisis announces it.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {types.map(t => (
-              <div key={t.t} className="group relative rounded-2xl bg-card border border-border p-7 hover:shadow-[var(--shadow-card)] hover:-translate-y-1 transition-all duration-300">
-                <div className="text-sm font-mono text-accent mb-4">{t.n}</div>
-                <h3 className="font-display text-2xl font-semibold mb-3">{t.t}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{t.d}</p>
+            {dangers.map(d => (
+              <div key={d.t} className="group relative rounded-2xl bg-card border border-border p-7 hover:shadow-[var(--shadow-card)] hover:-translate-y-1 transition-all duration-300">
+                <div className="w-11 h-11 rounded-xl bg-accent/10 grid place-items-center mb-5">
+                  <d.i className="w-5 h-5 text-accent" />
+                </div>
+                <h3 className="font-display text-2xl font-semibold mb-3">{d.t}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{d.d}</p>
               </div>
             ))}
           </div>
@@ -170,12 +179,12 @@ function DiabetesPage() {
       <section className="py-24 px-6 bg-secondary/40">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
           <div className="lg:sticky lg:top-24">
-            <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">Symptoms to watch</p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold mb-6">Your body has been whispering. It's about to start shouting.</h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">High blood sugar damages vessels long before you feel sick. If you recognize three or more of these, it's time to act.</p>
+            <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">Signs to take seriously</p>
+            <h2 className="font-display text-4xl md:text-5xl font-semibold mb-6">If three or more sound familiar, don't wait.</h2>
+            <p className="text-muted-foreground leading-relaxed mb-8">Hypertension rarely shouts. When symptoms do appear, the damage to vessels has often been building for years.</p>
             <div className="flex items-center gap-3 text-sm">
-              <Activity className="w-4 h-4 text-coral" />
-              <span className="text-coral font-medium">Untreated diabetes leads to heart, kidney, nerve and vision damage.</span>
+              <Activity className="w-4 h-4" style={{ color: "var(--coral)" }} />
+              <span className="font-medium" style={{ color: "var(--coral)" }}>Untreated, it leads to stroke, heart attack and kidney failure.</span>
             </div>
           </div>
           <ul className="grid sm:grid-cols-2 gap-3">
@@ -191,20 +200,39 @@ function DiabetesPage() {
         </div>
       </section>
 
+      {/* CAUSES */}
+      <section className="py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">What's behind it</p>
+            <h2 className="font-display text-4xl md:text-5xl font-semibold">Four pressures that keep your blood pressure high.</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {causes.map(c => (
+              <div key={c.t} className="rounded-2xl bg-card border border-border p-7">
+                <div className="text-sm font-mono text-accent mb-4">{c.n}</div>
+                <h3 className="font-display text-2xl font-semibold mb-3">{c.t}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{c.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* PROTOCOL */}
-      <section id="protocol" className="py-24 px-6">
+      <section id="protocol" className="py-24 px-6 bg-secondary/40">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">The 3-part protocol</p>
-            <h2 className="font-display text-4xl md:text-6xl font-semibold">DIALESE. MYCO-BALANCE. CAERITE.</h2>
-            <p className="mt-6 text-lg text-muted-foreground">Three formulations working in synergy — lowering, detoxifying, protecting. A complete pathway, not a single pill.</p>
+            <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">The 2-part protocol</p>
+            <h2 className="font-display text-4xl md:text-6xl font-semibold">HYPERFREE. CAERITE.</h2>
+            <p className="mt-6 text-lg text-muted-foreground">Two herbal formulations engineered to work in synergy — one calms the pressure, the other defends the heart.</p>
           </div>
 
-          <div className="rounded-3xl overflow-hidden mb-16 bg-secondary/40">
-            <img src={bottles} alt="DIALESE, MYCO-BALANCE, and CAERITE herbal bottles" width={1280} height={1024} loading="lazy" className="w-full h-auto" />
+          <div className="rounded-3xl overflow-hidden mb-16">
+            <img src={bottles} alt="HYPERFREE and CAERITE herbal bottles" width={1280} height={1024} loading="lazy" className="w-full h-auto" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {protocol.map((p, i) => (
               <div key={p.t} className="rounded-3xl bg-card border border-border p-8 shadow-[var(--shadow-card)]">
                 <div className="flex items-center gap-3 mb-6">
@@ -228,7 +256,7 @@ function DiabetesPage() {
           </div>
 
           <div className="mt-16 rounded-3xl p-10 border border-border bg-card grid md:grid-cols-3 gap-6 text-sm">
-            {["100% herbal & clinically safe", "No harsh side effects", "Suitable for men and women", "Heals, not just masks symptoms", "Phone-monitored protocol", "NAFDAC registered formula"].map(x => (
+            {["100% natural — no synthetic chemicals", "No addiction or withdrawal", "Safe for long-term use", "Prevents and reverses high BP", "Phone-monitored protocol", "NAFDAC registered formula"].map(x => (
               <div key={x} className="flex items-center gap-3">
                 <div className="w-5 h-5 rounded-full bg-accent grid place-items-center flex-shrink-0">
                   <Check className="w-3 h-3 text-accent-foreground" strokeWidth={3} />
@@ -245,9 +273,9 @@ function DiabetesPage() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-3xl opacity-20" style={{ background: "var(--color-gold)" }} />
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center mb-16">
-            <p className="text-sm uppercase tracking-[0.2em] text-[var(--gold)] font-medium mb-4">Choose your duration</p>
+            <p className="text-sm uppercase tracking-[0.2em] font-medium mb-4" style={{ color: "var(--gold)" }}>Choose your duration</p>
             <h2 className="font-display text-4xl md:text-6xl font-semibold">Pay on delivery. Heal on schedule.</h2>
-            <p className="mt-4 text-primary-foreground/70 max-w-xl mx-auto">Long-standing diabetes typically needs 2–3 months of consistent use. Bundle pricing reflects that journey.</p>
+            <p className="mt-4 text-primary-foreground/70 max-w-xl mx-auto">Long-standing hypertension typically needs 2–3 months of consistent use. Bundle pricing reflects that journey.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -265,7 +293,7 @@ function DiabetesPage() {
                     <span className={`text-sm ${isFeatured ? "text-foreground/70" : "text-primary-foreground/60"}`}>{p.b} bottles</span>
                   </div>
                   <h3 className="font-display text-4xl font-semibold mb-8">{p.d}</h3>
-                  <div className="flex items-baseline gap-3 mb-8">
+                  <div className="flex items-baseline gap-3 mb-2">
                     <span className="font-display text-5xl font-semibold">₦{p.now}</span>
                   </div>
                   <div className={`text-sm line-through mb-8 ${isFeatured ? "text-foreground/50" : "text-primary-foreground/50"}`}>Was ₦{p.was}</div>
@@ -287,7 +315,7 @@ function DiabetesPage() {
             {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-[var(--gold)] text-[var(--gold)]" />)}
           </div>
           <blockquote className="font-display text-2xl md:text-4xl leading-tight mb-8">
-            "It's better to ask questions than to remain silent without solving the health issue. I monitor every patient personally — from order to recovery."
+            "Your heart deserves better. With HYPERFREE and CAERITE you don't just lower a number — you restore balance and defend your life."
           </blockquote>
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 rounded-full grid place-items-center" style={{ background: "var(--gradient-hero)" }}>
@@ -295,7 +323,7 @@ function DiabetesPage() {
             </div>
             <div>
               <div className="font-medium">Dr Racheal</div>
-              <div className="text-sm text-muted-foreground">Clinical lead, GHT diabetes protocol</div>
+              <div className="text-sm text-muted-foreground">GHT Healthcare Provider · Hypertension protocol lead</div>
             </div>
           </div>
         </div>
@@ -305,7 +333,7 @@ function DiabetesPage() {
       <section id="faq" className="py-24 px-6 bg-secondary/40">
         <div className="max-w-4xl mx-auto">
           <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">Before you order</p>
-          <h2 className="font-display text-4xl md:text-5xl font-semibold mb-12">Answers from our customers' most-asked questions.</h2>
+          <h2 className="font-display text-4xl md:text-5xl font-semibold mb-12">Answers to the questions customers ask most.</h2>
           <div className="divide-y divide-border border-y border-border">
             {faqs.map(f => (
               <details key={f.q} className="group py-6">
@@ -326,12 +354,12 @@ function DiabetesPage() {
       <section className="py-24 px-6">
         <div className="max-w-5xl mx-auto rounded-3xl p-10 md:p-14 relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
           <div className="relative z-10 text-primary-foreground">
-            <p className="text-sm uppercase tracking-[0.2em] text-[var(--gold)] font-medium mb-4">A note before ordering</p>
+            <p className="text-sm uppercase tracking-[0.2em] font-medium mb-4" style={{ color: "var(--gold)" }}>A note before ordering</p>
             <h2 className="font-display text-4xl md:text-5xl font-semibold mb-6 max-w-2xl">Order only when you're ready to receive.</h2>
             <ul className="space-y-2 text-primary-foreground/80 mb-10 max-w-2xl">
-              <li>— Funds available to pay on delivery in 0–2 days.</li>
+              <li>— Funds available to pay on delivery within 0–2 days.</li>
               <li>— You will be reachable by phone after ordering.</li>
-              <li>— You're not about to travel before delivery.</li>
+              <li>— Not traveling or unavailable before delivery.</li>
             </ul>
             <div className="flex flex-wrap gap-4">
               <a href={ORDER_URL} target="_blank" rel="noopener noreferrer"
