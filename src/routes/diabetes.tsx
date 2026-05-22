@@ -74,6 +74,7 @@ function DiabetesPage() {
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <Link to="/" className="hover:text-foreground transition">Prostate</Link>
             <Link to="/diabetes" className="text-foreground font-medium">Diabetes</Link>
+            <Link to="/hypertension" className="hover:text-foreground transition">Hypertension</Link>
             <a href="#protocol" className="hover:text-foreground transition">Protocol</a>
             <a href="#pricing" className="hover:text-foreground transition">Pricing</a>
             <a href="#faq" className="hover:text-foreground transition">FAQ</a>
