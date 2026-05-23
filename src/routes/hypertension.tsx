@@ -281,6 +281,10 @@ function HypertensionPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {packs.map(p => {
               const isFeatured = p.tag === "Full Protocol";
+              const waMessage = encodeURIComponent(
+                `Hello GHT, I'd like to order the HYPERFREE + CAERITE Hypertension Protocol.\n\n• Pack: ${p.d} (${p.b} bottles)\n• Price: ₦${p.now}\n\nPlease confirm delivery details. Thank you.`
+              );
+              const waLink = `${WA_URL}?text=${waMessage}`;
               return (
                 <div key={p.b} className={`relative rounded-3xl p-10 border ${isFeatured ? "bg-[var(--gold)] text-foreground border-[var(--gold)]" : "bg-primary-foreground/5 border-primary-foreground/10 backdrop-blur"}`}>
                   {p.tag && (
@@ -296,11 +300,17 @@ function HypertensionPage() {
                   <div className="flex items-baseline gap-3 mb-2">
                     <span className="font-display text-5xl font-semibold">₦{p.now}</span>
                   </div>
-                  <div className={`text-sm line-through mb-8 ${isFeatured ? "text-foreground/50" : "text-primary-foreground/50"}`}>Was ₦{p.was}</div>
-                  <a href={ORDER_URL} target="_blank" rel="noopener noreferrer"
-                    className={`inline-flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-medium transition ${isFeatured ? "bg-foreground text-background hover:opacity-90" : "bg-primary-foreground text-primary hover:bg-primary-foreground/90"}`}>
-                    Order this pack <ArrowRight className="w-4 h-4" />
-                  </a>
+                  <div className={`text-sm line-through mb-6 ${isFeatured ? "text-foreground/50" : "text-primary-foreground/50"}`}>Was ₦{p.was}</div>
+                  <div className="space-y-3">
+                    <a href={waLink} target="_blank" rel="noopener noreferrer"
+                      className={`inline-flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-medium transition ${isFeatured ? "bg-[#25D366] text-white hover:opacity-90" : "bg-[#25D366] text-white hover:opacity-90"}`}>
+                      <MessageCircle className="w-4 h-4" /> Order on WhatsApp
+                    </a>
+                    <a href={ORDER_URL} target="_blank" rel="noopener noreferrer"
+                      className={`inline-flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-medium transition ${isFeatured ? "bg-foreground text-background hover:opacity-90" : "bg-primary-foreground text-primary hover:bg-primary-foreground/90"}`}>
+                      Use order form <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
                 </div>
               );
             })}
