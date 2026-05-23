@@ -82,6 +82,7 @@ function HypertensionPage() {
             <Link to="/" className="hover:text-foreground transition">Prostate</Link>
             <Link to="/diabetes" className="hover:text-foreground transition">Diabetes</Link>
             <Link to="/hypertension" className="text-foreground font-medium">Hypertension</Link>
+            <Link to="/fine-health" className="hover:text-foreground transition">Vitality</Link>
             <a href="#protocol" className="hover:text-foreground transition">Protocol</a>
             <a href="#pricing" className="hover:text-foreground transition">Pricing</a>
             <a href="#faq" className="hover:text-foreground transition">FAQ</a>

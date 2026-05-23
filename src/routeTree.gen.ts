@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as HypertensionRouteImport } from './routes/hypertension'
+import { Route as FineHealthRouteImport } from './routes/fine-health'
 import { Route as DiabetesRouteImport } from './routes/diabetes'
 import { Route as IndexRouteImport } from './routes/index'
 
 const HypertensionRoute = HypertensionRouteImport.update({
   id: '/hypertension',
   path: '/hypertension',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FineHealthRoute = FineHealthRouteImport.update({
+  id: '/fine-health',
+  path: '/fine-health',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DiabetesRoute = DiabetesRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/diabetes': typeof DiabetesRoute
+  '/fine-health': typeof FineHealthRoute
   '/hypertension': typeof HypertensionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/diabetes': typeof DiabetesRoute
+  '/fine-health': typeof FineHealthRoute
   '/hypertension': typeof HypertensionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/diabetes': typeof DiabetesRoute
+  '/fine-health': typeof FineHealthRoute
   '/hypertension': typeof HypertensionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/diabetes' | '/hypertension'
+  fullPaths: '/' | '/diabetes' | '/fine-health' | '/hypertension'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/diabetes' | '/hypertension'
-  id: '__root__' | '/' | '/diabetes' | '/hypertension'
+  to: '/' | '/diabetes' | '/fine-health' | '/hypertension'
+  id: '__root__' | '/' | '/diabetes' | '/fine-health' | '/hypertension'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DiabetesRoute: typeof DiabetesRoute
+  FineHealthRoute: typeof FineHealthRoute
   HypertensionRoute: typeof HypertensionRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/hypertension'
       fullPath: '/hypertension'
       preLoaderRoute: typeof HypertensionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fine-health': {
+      id: '/fine-health'
+      path: '/fine-health'
+      fullPath: '/fine-health'
+      preLoaderRoute: typeof FineHealthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/diabetes': {
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DiabetesRoute: DiabetesRoute,
+  FineHealthRoute: FineHealthRoute,
   HypertensionRoute: HypertensionRoute,
 }
 export const routeTree = rootRouteImport
