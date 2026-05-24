@@ -45,30 +45,21 @@ const faqs = [
 function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground">
-      {/* Nav */}
-      <header className="sticky top-0 z-40 backdrop-blur-md bg-background/70 border-b border-border/60">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="#" className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-xl grid place-items-center" style={{ background: "var(--gradient-hero)" }}>
-              <Leaf className="w-5 h-5 text-primary-foreground" strokeWidth={2.5} />
-            </div>
-            <span className="font-display text-xl font-semibold">GHT<span className="text-accent">.</span></span>
-          </a>
-          <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-            <a href="#symptoms" className="hover:text-foreground transition">Symptoms</a>
-            <a href="#product" className="hover:text-foreground transition">Product</a>
-            <a href="#pricing" className="hover:text-foreground transition">Pricing</a>
-            <a href="#faq" className="hover:text-foreground transition">FAQ</a>
-            <a href="/diabetes" className="hover:text-foreground transition">Diabetes</a>
-            <a href="/hypertension" className="hover:text-foreground transition">Hypertension</a>
-            <a href="/fine-health" className="hover:text-foreground transition">Vitality</a>
-          </nav>
-          <a href={ORDER_URL} target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition">
-            Order now <ArrowRight className="w-4 h-4" />
-          </a>
-        </div>
-      </header>
+      <SiteNav
+        ctaHref={ORDER_URL}
+        sectionLinks={[
+          { label: "Symptoms", href: "#symptoms" },
+          { label: "Product", href: "#product" },
+          { label: "Pricing", href: "#pricing" },
+          { label: "FAQ", href: "#faq" },
+        ]}
+        pageLinks={[
+          { label: "Diabetes", href: "/diabetes" },
+          { label: "Hypertension", href: "/hypertension" },
+          { label: "Vitality", href: "/fine-health" },
+        ]}
+      />
+
 
       {/* HERO */}
       <section className="relative overflow-hidden">
