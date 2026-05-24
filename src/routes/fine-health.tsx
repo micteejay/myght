@@ -68,28 +68,21 @@ const faqs = [
 function FineHealthPage() {
   return (
     <main className="min-h-screen bg-background text-foreground">
-      {/* NAV */}
-      <header className="sticky top-0 z-40 backdrop-blur-md bg-background/70 border-b border-border/60">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link to="/fine-health" className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-xl grid place-items-center" style={{ background: "var(--gradient-hero)" }}>
-              <Flame className="w-5 h-5 text-primary-foreground" strokeWidth={2.5} />
-            </div>
-            <span className="font-display text-xl font-semibold">Fine Health<span className="text-accent">.</span></span>
-          </Link>
-          <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-            <Link to="/" className="hover:text-foreground transition">Prostate</Link>
-            <Link to="/diabetes" className="hover:text-foreground transition">Diabetes</Link>
-            <Link to="/hypertension" className="hover:text-foreground transition">Hypertension</Link>
-            <Link to="/fine-health" className="text-foreground font-medium">Vitality</Link>
-            <a href="#packs" className="hover:text-foreground transition">Packs</a>
-            <a href="#faq" className="hover:text-foreground transition">FAQ</a>
-          </nav>
-          <a href="#packs" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition">
-            Order now <ArrowRight className="w-4 h-4" />
-          </a>
-        </div>
-      </header>
+      <SiteNav
+        brand="Fine Health"
+        ctaHref="#packs"
+        sectionLinks={[
+          { label: "Packs", href: "#packs" },
+          { label: "FAQ", href: "#faq" },
+        ]}
+        pageLinks={[
+          { label: "Prostate", href: "/" },
+          { label: "Diabetes", href: "/diabetes" },
+          { label: "Hypertension", href: "/hypertension" },
+          { label: "Vitality", href: "/fine-health" },
+        ]}
+      />
+
 
       {/* HERO */}
       <section className="relative overflow-hidden">
