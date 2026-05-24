@@ -271,6 +271,9 @@ function FineHealthPage() {
               const waLink = `${WA}?text=${msg}`;
               return (
                 <div key={p.b} className={`relative rounded-3xl p-7 border ${featured ? "bg-[var(--gold)] text-foreground border-[var(--gold)] lg:scale-105" : "bg-primary-foreground/5 border-primary-foreground/10 backdrop-blur"}`}>
+                  <div className={`rounded-2xl overflow-hidden mb-5 aspect-square ${featured ? "bg-foreground/5" : "bg-primary-foreground/5"}`}>
+                    <img src={p.img} alt={`${p.tag} pack — ${p.b} bottles`} loading="lazy" className="w-full h-full object-cover" />
+                  </div>
                   <span className={`inline-block text-[10px] tracking-[0.18em] uppercase font-medium mb-3 ${featured ? "text-foreground/70" : "text-primary-foreground/60"}`}>
                     {featured && "⭐ "}{p.tag}
                   </span>
