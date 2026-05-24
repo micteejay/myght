@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { SiteNav } from "@/components/SiteNav";
 import { Check, ShieldCheck, Leaf, Phone, MessageCircle, Star, ArrowRight, Sparkles, HeartPulse, Activity, Brain, Pill, AlertTriangle } from "lucide-react";
 import hero from "@/assets/hypertension-hero.jpg";
 import bottles from "@/assets/hypertension-bottles.jpg";
