@@ -1,7 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, ShieldCheck, Leaf, Phone, MessageCircle, Star, ArrowRight, Sparkles, Flame, Heart, Droplets, Shield, Zap, Activity, Dumbbell, Pill } from "lucide-react";
-import hero from "@/assets/finehealth-hero.jpg";
-import bottle from "@/assets/finehealth-bottle.jpg";
+import hero from "@/assets/fh/hero-couple-BAj9MjBO.jpg";
+import bottle from "@/assets/fh/herbs-flatlay-E3vW8wHx.jpg";
+import coupleGarden from "@/assets/fh/couple-garden-CRaiJ1KJ.jpg";
+import manConfident from "@/assets/fh/man-confident-DrsJvUMu.jpg";
+import pack2 from "@/assets/fh/pack-2-CLKONyzA.jpg";
+import pack3 from "@/assets/fh/pack-3-BgO4PPtO.jpg";
+import pack4 from "@/assets/fh/pack-4-B9Qzi51I.jpg";
+import pack6 from "@/assets/fh/pack-6-Bf0XYqh2.jpg";
 
 export const Route = createFileRoute("/fine-health")({
   component: FineHealthPage,
@@ -34,11 +40,11 @@ const peCauses = ["Temporary depression", "Stress", "Guilt", "Performance expect
 const weCauses = ["Heart disease", "Atherosclerosis", "High cholesterol", "High blood pressure", "Diabetes", "Obesity", "Parkinson's disease", "Certain medications", "Tobacco use", "Alcohol abuse", "Sleep disorders", "Prostate treatments"];
 
 const packs = [
-  { tag: "Starter", b: 2, focus: "Premature Ejaculation", now: "36,500", was: "48,500" },
-  { tag: "Popular", b: 3, focus: "Premature Ejaculation + Low Libido", now: "47,500", was: "60,000" },
-  { tag: "Best Value", b: 4, focus: "Premature Ejaculation + Back Pain", now: "60,500", was: "75,000" },
-  { tag: "Best Seller", b: 6, focus: "Weak Erection + Spermatogenesis", now: "93,500", was: "110,500", featured: true },
-  { tag: "Premium", b: 8, focus: "Strong Erection + Impotence + Circulation", now: "130,500", was: "145,000" },
+  { tag: "Starter", b: 2, focus: "Premature Ejaculation", now: "36,500", was: "48,500", img: pack2 },
+  { tag: "Popular", b: 3, focus: "Premature Ejaculation + Low Libido", now: "47,500", was: "60,000", img: pack3 },
+  { tag: "Best Value", b: 4, focus: "Premature Ejaculation + Back Pain", now: "60,500", was: "75,000", img: pack4 },
+  { tag: "Best Seller", b: 6, focus: "Weak Erection + Spermatogenesis", now: "93,500", was: "110,500", featured: true, img: pack6 },
+  { tag: "Premium", b: 8, focus: "Strong Erection + Impotence + Circulation", now: "130,500", was: "145,000", img: pack6 },
 ];
 
 const testimonials = [
@@ -265,6 +271,9 @@ function FineHealthPage() {
               const waLink = `${WA}?text=${msg}`;
               return (
                 <div key={p.b} className={`relative rounded-3xl p-7 border ${featured ? "bg-[var(--gold)] text-foreground border-[var(--gold)] lg:scale-105" : "bg-primary-foreground/5 border-primary-foreground/10 backdrop-blur"}`}>
+                  <div className={`rounded-2xl overflow-hidden mb-5 aspect-square ${featured ? "bg-foreground/5" : "bg-primary-foreground/5"}`}>
+                    <img src={p.img} alt={`${p.tag} pack — ${p.b} bottles`} loading="lazy" className="w-full h-full object-cover" />
+                  </div>
                   <span className={`inline-block text-[10px] tracking-[0.18em] uppercase font-medium mb-3 ${featured ? "text-foreground/70" : "text-primary-foreground/60"}`}>
                     {featured && "⭐ "}{p.tag}
                   </span>
