@@ -1,7 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, ShieldCheck, Leaf, Phone, MessageCircle, Star, ArrowRight, Sparkles, Flame, Heart, Droplets, Shield, Zap, Activity, Dumbbell, Pill } from "lucide-react";
-import hero from "@/assets/finehealth-hero.jpg";
-import bottle from "@/assets/finehealth-bottle.jpg";
+import hero from "@/assets/fh/hero-couple-BAj9MjBO.jpg";
+import bottle from "@/assets/fh/herbs-flatlay-E3vW8wHx.jpg";
+import coupleGarden from "@/assets/fh/couple-garden-CRaiJ1KJ.jpg";
+import manConfident from "@/assets/fh/man-confident-DrsJvUMu.jpg";
+import pack2 from "@/assets/fh/pack-2-CLKONyzA.jpg";
+import pack3 from "@/assets/fh/pack-3-BgO4PPtO.jpg";
+import pack4 from "@/assets/fh/pack-4-B9Qzi51I.jpg";
+import pack6 from "@/assets/fh/pack-6-Bf0XYqh2.jpg";
 
 export const Route = createFileRoute("/fine-health")({
   component: FineHealthPage,
