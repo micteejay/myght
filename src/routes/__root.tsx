@@ -7,6 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { OrderProvider } from "@/components/OrderDialog";
 
 import appCss from "../styles.css?url";
 
@@ -117,7 +118,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <OrderProvider>
+        <Outlet />
+      </OrderProvider>
     </QueryClientProvider>
   );
 }
