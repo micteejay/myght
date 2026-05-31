@@ -91,13 +91,13 @@ function HypertensionPage() {
         <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-soft)" }} />
         <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full -z-10 opacity-40 blur-3xl" style={{ background: "var(--gradient-hero)" }} />
 
-        <div className="max-w-7xl mx-auto px-6 pt-16 pb-24 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-20 sm:pb-24 grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-4 py-1.5 text-xs font-medium text-muted-foreground mb-8">
               <Sparkles className="w-3.5 h-3.5 text-accent" />
               No Lisinopril · No Amlodipine · 113,000+ users
             </div>
-            <h1 className="font-display text-5xl md:text-7xl font-semibold leading-[1.02] tracking-tight">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-semibold leading-[1.05] sm:leading-[1.02] tracking-tight">
               Quiet the<br />
               <span className="italic text-accent">silent killer.</span>
             </h1>
@@ -144,12 +144,12 @@ function HypertensionPage() {
       </section>
 
       {/* DANGERS */}
-      <section className="py-24 px-6">
+      <section className="py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
             <div className="max-w-2xl">
               <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">Why hypertension is dangerous</p>
-              <h2 className="font-display text-4xl md:text-5xl font-semibold">It strikes quietly. Then everything at once.</h2>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold">It strikes quietly. Then everything at once.</h2>
             </div>
             <p className="text-muted-foreground max-w-md">Most people don't know they have it until a stroke, heart attack or kidney crisis announces it.</p>
           </div>
@@ -169,11 +169,11 @@ function HypertensionPage() {
       </section>
 
       {/* SYMPTOMS */}
-      <section className="py-24 px-6 bg-secondary/40">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 bg-secondary/40">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
           <div className="lg:sticky lg:top-24">
             <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">Signs to take seriously</p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold mb-6">If three or more sound familiar, don't wait.</h2>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold mb-6">If three or more sound familiar, don't wait.</h2>
             <p className="text-muted-foreground leading-relaxed mb-8">Hypertension rarely shouts. When symptoms do appear, the damage to vessels has often been building for years.</p>
             <div className="flex items-center gap-3 text-sm">
               <Activity className="w-4 h-4" style={{ color: "var(--coral)" }} />
@@ -194,11 +194,11 @@ function HypertensionPage() {
       </section>
 
       {/* CAUSES */}
-      <section className="py-24 px-6">
+      <section className="py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">What's behind it</p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold">Four pressures that keep your blood pressure high.</h2>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold">Four pressures that keep your blood pressure high.</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {causes.map(c => (
@@ -213,11 +213,11 @@ function HypertensionPage() {
       </section>
 
       {/* PROTOCOL */}
-      <section id="protocol" className="py-24 px-6 bg-secondary/40">
+      <section id="protocol" className="py-16 sm:py-24 px-4 sm:px-6 bg-secondary/40">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">The 2-part protocol</p>
-            <h2 className="font-display text-4xl md:text-6xl font-semibold">HYPERFREE. CAERITE.</h2>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-semibold">HYPERFREE. CAERITE.</h2>
             <p className="mt-6 text-lg text-muted-foreground">Two herbal formulations engineered to work in synergy — one calms the pressure, the other defends the heart.</p>
           </div>
 
@@ -262,12 +262,12 @@ function HypertensionPage() {
       </section>
 
       {/* PRICING */}
-      <section id="pricing" className="py-24 px-6 bg-primary text-primary-foreground relative overflow-hidden">
+      <section id="pricing" className="py-16 sm:py-24 px-4 sm:px-6 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-3xl opacity-20" style={{ background: "var(--color-gold)" }} />
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-[0.2em] font-medium mb-4" style={{ color: "var(--gold)" }}>Choose your duration</p>
-            <h2 className="font-display text-4xl md:text-6xl font-semibold">Pay on delivery. Heal on schedule.</h2>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-semibold">Pay on delivery. Heal on schedule.</h2>
             <p className="mt-4 text-primary-foreground/70 max-w-xl mx-auto">Long-standing hypertension typically needs 2–3 months of consistent use. Bundle pricing reflects that journey.</p>
           </div>
 
@@ -312,7 +312,7 @@ function HypertensionPage() {
       </section>
 
       {/* TESTIMONIAL / DOCTOR */}
-      <section className="py-24 px-6">
+      <section className="py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto rounded-3xl bg-card border border-border p-10 md:p-14 shadow-[var(--shadow-card)]">
           <div className="flex gap-0.5 mb-6">
             {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-[var(--gold)] text-[var(--gold)]" />)}
@@ -333,10 +333,10 @@ function HypertensionPage() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-24 px-6 bg-secondary/40">
+      <section id="faq" className="py-16 sm:py-24 px-4 sm:px-6 bg-secondary/40">
         <div className="max-w-4xl mx-auto">
           <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">Before you order</p>
-          <h2 className="font-display text-4xl md:text-5xl font-semibold mb-12">Answers to the questions customers ask most.</h2>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold mb-12">Answers to the questions customers ask most.</h2>
           <div className="divide-y divide-border border-y border-border">
             {faqs.map(f => (
               <details key={f.q} className="group py-6">
@@ -354,11 +354,11 @@ function HypertensionPage() {
       </section>
 
       {/* WARNING + CTA */}
-      <section className="py-24 px-6">
+      <section className="py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto rounded-3xl p-10 md:p-14 relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
           <div className="relative z-10 text-primary-foreground">
             <p className="text-sm uppercase tracking-[0.2em] font-medium mb-4" style={{ color: "var(--gold)" }}>A note before ordering</p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold mb-6 max-w-2xl">Order only when you're ready to receive.</h2>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 max-w-2xl">Order only when you're ready to receive.</h2>
             <ul className="space-y-2 text-primary-foreground/80 mb-10 max-w-2xl">
               <li>— Funds available to pay on delivery within 0–2 days.</li>
               <li>— You will be reachable by phone after ordering.</li>

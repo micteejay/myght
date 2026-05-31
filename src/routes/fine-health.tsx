@@ -90,13 +90,13 @@ function FineHealthPage() {
         <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-soft)" }} />
         <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full -z-10 opacity-40 blur-3xl" style={{ background: "var(--gradient-hero)" }} />
 
-        <div className="max-w-7xl mx-auto px-6 pt-16 pb-24 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-20 sm:pb-24 grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-4 py-1.5 text-xs font-medium text-muted-foreground mb-8">
               <Sparkles className="w-3.5 h-3.5 text-accent" />
               Trusted by 1,000,000+ men · NAFDAC approved
             </div>
-            <h1 className="font-display text-5xl md:text-7xl font-semibold leading-[1.02] tracking-tight">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-semibold leading-[1.05] sm:leading-[1.02] tracking-tight">
               Reclaim your power.<br />
               <span className="italic text-accent">Renew her joy.</span>
             </h1>
@@ -152,10 +152,10 @@ function FineHealthPage() {
       </section>
 
       {/* THE PROBLEM */}
-      <section className="py-24 px-6">
+      <section className="py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">The problem</p>
-          <h2 className="font-display text-4xl md:text-5xl font-semibold mb-8">You both deserve a joyful sex life.</h2>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold mb-8">You both deserve a joyful sex life.</h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
             A weak erection — often called erectile dysfunction — is the difficulty getting or keeping an erection firm enough for satisfying intimacy. Occasional issues are common, but if the problem keeps coming back, it's a signal worth addressing.
           </p>
@@ -169,11 +169,11 @@ function FineHealthPage() {
       </section>
 
       {/* CAUSES */}
-      <section className="py-24 px-6 bg-secondary/40">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 bg-secondary/40">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">Why it happens</p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold">Common causes — and why they don't have to stay.</h2>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold">Common causes — and why they don't have to stay.</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="rounded-3xl bg-card border border-border p-8">
@@ -199,14 +199,14 @@ function FineHealthPage() {
       </section>
 
       {/* INSIDE THE BOTTLE */}
-      <section className="py-24 px-6">
+      <section className="py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="rounded-3xl overflow-hidden shadow-[var(--shadow-card)]">
             <img src={bottle} alt="Fine Health herbal supplement bottle" width={1280} height={1024} loading="lazy" className="w-full h-auto" />
           </div>
           <div>
             <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">Inside every bottle</p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold mb-6">Pure plants. Proven results.</h2>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold mb-6">Pure plants. Proven results.</h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               A blend of traditional African and Asian herbs — ginseng, tribulus, ginger root and more — formulated for modern men who want lasting performance without compromise.
             </p>
@@ -225,11 +225,11 @@ function FineHealthPage() {
       </section>
 
       {/* BENEFITS */}
-      <section className="py-24 px-6 bg-secondary/40">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 bg-secondary/40">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">What you get</p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold">8 real benefits from day one.</h2>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold">8 real benefits from day one.</h2>
             <p className="mt-4 text-muted-foreground">Each bottle supports male performance from multiple angles — stamina, libido, blood flow and overall vitality.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -247,12 +247,12 @@ function FineHealthPage() {
       </section>
 
       {/* PACKS */}
-      <section id="packs" className="py-24 px-6 bg-primary text-primary-foreground relative overflow-hidden">
+      <section id="packs" className="py-16 sm:py-24 px-4 sm:px-6 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-3xl opacity-20" style={{ background: "var(--color-gold)" }} />
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-[0.2em] font-medium mb-4" style={{ color: "var(--gold)" }}>Choose your pack</p>
-            <h2 className="font-display text-4xl md:text-6xl font-semibold">Bigger bundles, bigger savings.</h2>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-semibold">Bigger bundles, bigger savings.</h2>
             <p className="mt-4 text-primary-foreground/70 max-w-xl mx-auto">Pay on delivery anywhere in Nigeria. Every pack is 100% herbal and side-effect free.</p>
           </div>
 
@@ -298,11 +298,11 @@ function FineHealthPage() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-24 px-6">
+      <section className="py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">Real stories</p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold">A million men. A million reasons to smile.</h2>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold">A million men. A million reasons to smile.</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {testimonials.map(t => (
@@ -319,10 +319,10 @@ function FineHealthPage() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-24 px-6 bg-secondary/40">
+      <section id="faq" className="py-16 sm:py-24 px-4 sm:px-6 bg-secondary/40">
         <div className="max-w-4xl mx-auto">
           <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">Questions</p>
-          <h2 className="font-display text-4xl md:text-5xl font-semibold mb-12">Frequently asked.</h2>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold mb-12">Frequently asked.</h2>
           <div className="divide-y divide-border border-y border-border">
             {faqs.map(f => (
               <details key={f.q} className="group py-6">
@@ -340,11 +340,11 @@ function FineHealthPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6">
+      <section className="py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto rounded-3xl p-10 md:p-14 relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
           <div className="relative z-10 text-primary-foreground">
             <p className="text-sm uppercase tracking-[0.2em] font-medium mb-4" style={{ color: "var(--gold)" }}>⚠️ Before you order</p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold mb-6 max-w-2xl">Order only when you're ready to receive.</h2>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 max-w-2xl">Order only when you're ready to receive.</h2>
             <ul className="space-y-2 text-primary-foreground/80 mb-10 max-w-2xl">
               <li>— Funds available to pay on delivery within 0–2 days.</li>
               <li>— You will be reachable by phone after ordering.</li>

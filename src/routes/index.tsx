@@ -67,13 +67,13 @@ function Index() {
         <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-soft)" }} />
         <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full -z-10 opacity-40 blur-3xl" style={{ background: "var(--gradient-hero)" }} />
 
-        <div className="max-w-7xl mx-auto px-6 pt-16 pb-24 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-20 sm:pb-24 grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-4 py-1.5 text-xs font-medium text-muted-foreground mb-8">
               <Sparkles className="w-3.5 h-3.5 text-accent" />
               100% herbal · No side effects · Trusted across Africa
             </div>
-            <h1 className="font-display text-5xl md:text-7xl font-semibold leading-[1.02] tracking-tight">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-semibold leading-[1.05] sm:leading-[1.02] tracking-tight">
               Reclaim your nights.<br />
               <span className="italic text-accent">Restore</span> your flow.
             </h1>
@@ -114,12 +114,12 @@ function Index() {
       </section>
 
       {/* SYMPTOMS */}
-      <section id="symptoms" className="py-24 px-6">
+      <section id="symptoms" className="py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
             <div className="max-w-2xl">
               <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">The signs</p>
-              <h2 className="font-display text-4xl md:text-5xl font-semibold">If you're a man in your 40s, 50s, 60s or 70s — read this.</h2>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold">If you're a man in your 40s, 50s, 60s or 70s — read this.</h2>
             </div>
             <p className="text-muted-foreground max-w-md">An enlarged prostate (BPH) shows up quietly. Most men ignore the early warnings until it becomes an emergency.</p>
           </div>
@@ -139,7 +139,7 @@ function Index() {
       </section>
 
       {/* PRODUCT */}
-      <section id="product" className="py-24 px-6 bg-secondary/40">
+      <section id="product" className="py-16 sm:py-24 px-4 sm:px-6 bg-secondary/40">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <div className="absolute inset-0 rounded-full blur-3xl opacity-30" style={{ background: "var(--gradient-hero)" }} />
@@ -147,7 +147,7 @@ function Index() {
           </div>
           <div>
             <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">Meet GHT</p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold mb-6">A formula made from <em className="text-accent not-italic">plants,</em> not chemicals.</h2>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold mb-6">A formula made from <em className="text-accent not-italic">plants,</em> not chemicals.</h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               Conventional drugs like Duodart, Contiflo and Tamsulocin can cause dizziness, fatigue, decreased libido, erectile dysfunction and lowered blood cell counts. GHT delivers relief from BPH symptoms with a pure herbal and plant-extract blend — zero synthetic chemicals.
             </p>
@@ -171,14 +171,14 @@ function Index() {
       </section>
 
       {/* ANATOMY EDUCATIONAL STRIP */}
-      <section className="py-24 px-6">
+      <section className="py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-12 items-center">
           <div className="lg:col-span-2 rounded-3xl overflow-hidden bg-secondary/40 p-8">
             <img src={anatomy} alt="Prostate anatomy illustration" width={1024} height={768} loading="lazy" className="w-full h-auto" />
           </div>
           <div className="lg:col-span-3">
             <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">Why it happens</p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold mb-6">Two paths the prostate can take.</h2>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold mb-6">Two paths the prostate can take.</h2>
             <div className="space-y-6">
               <div className="border-l-2 border-accent pl-6">
                 <h3 className="font-display text-2xl mb-2">Benign Enlargement (BPH)</h3>
@@ -194,12 +194,12 @@ function Index() {
       </section>
 
       {/* PRICING */}
-      <section id="pricing" className="py-24 px-6 bg-primary text-primary-foreground relative overflow-hidden">
+      <section id="pricing" className="py-16 sm:py-24 px-4 sm:px-6 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-3xl opacity-20" style={{ background: "var(--color-gold)" }} />
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-[0.2em] text-[var(--gold)] font-medium mb-4">Choose your treatment</p>
-            <h2 className="font-display text-4xl md:text-6xl font-semibold">Discounted bundles, Nigerian pricing.</h2>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-semibold">Discounted bundles, Nigerian pricing.</h2>
             <p className="mt-4 text-primary-foreground/70 max-w-xl mx-auto">Pay on delivery. Bundles save more — most chronic cases need 2–3 months of consistent use.</p>
           </div>
 
@@ -231,11 +231,11 @@ function Index() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-24 px-6">
+      <section className="py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">Real stories</p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold">1,500+ men, one common reaction.</h2>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold">1,500+ men, one common reaction.</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -258,10 +258,10 @@ function Index() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-24 px-6 bg-secondary/40">
+      <section id="faq" className="py-16 sm:py-24 px-4 sm:px-6 bg-secondary/40">
         <div className="max-w-4xl mx-auto">
           <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">Questions answered</p>
-          <h2 className="font-display text-4xl md:text-5xl font-semibold mb-12">Before you order.</h2>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold mb-12">Before you order.</h2>
           <div className="divide-y divide-border border-y border-border">
             {faqs.map(f => (
               <details key={f.q} className="group py-6">
@@ -279,11 +279,11 @@ function Index() {
       </section>
 
       {/* WARNING + CTA */}
-      <section className="py-24 px-6">
+      <section className="py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto rounded-3xl p-10 md:p-14 relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
           <div className="relative z-10 text-primary-foreground">
             <p className="text-sm uppercase tracking-[0.2em] text-[var(--gold)] font-medium mb-4">A note before ordering</p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold mb-6 max-w-2xl">Only fill the form if you are serious.</h2>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 max-w-2xl">Only fill the form if you are serious.</h2>
             <ul className="space-y-2 text-primary-foreground/80 mb-10 max-w-2xl">
               <li>— You're 30 years or older with a related health concern.</li>
               <li>— You can pay on delivery at your stated address.</li>
