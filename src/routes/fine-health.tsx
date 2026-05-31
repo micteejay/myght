@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
+import { OrderButton, useOrder } from "@/components/OrderDialog";
 import { Check, ShieldCheck, Leaf, Phone, MessageCircle, Star, ArrowRight, Sparkles, Flame, Heart, Droplets, Shield, Zap, Activity, Dumbbell, Pill } from "lucide-react";
 import hero from "@/assets/fh/hero-couple-BAj9MjBO.jpg";
 import bottle from "@/assets/fh/herbs-flatlay-E3vW8wHx.jpg";
@@ -71,7 +72,7 @@ function FineHealthPage() {
     <main className="min-h-screen bg-background text-foreground">
       <SiteNav
         brand="Fine Health"
-        ctaHref="#packs"
+        orderProduct="Fine Health Vitality"
         sectionLinks={[
           { label: "Packs", href: "#packs" },
           { label: "FAQ", href: "#faq" },
@@ -127,9 +128,9 @@ function FineHealthPage() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative animate-float-soft">
             <div className="relative rounded-3xl overflow-hidden shadow-[var(--shadow-elegant)]">
-              <img src={hero} alt="Confident man with natural herbs — Fine Health vitality" width={1280} height={1280} className="w-full h-auto object-cover aspect-square" />
+              <img src={hero} alt="Confident man with natural herbs — Fine Health vitality" width={1280} height={1280} className="w-full h-auto object-cover aspect-square animate-spin-slow" />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl shadow-[var(--shadow-card)] p-5 max-w-[280px] border border-border">
               <div className="flex items-center gap-2 mb-2">
@@ -281,13 +282,16 @@ function FineHealthPage() {
                   </div>
                   <div className={`text-xs line-through mb-6 ${featured ? "text-foreground/50" : "text-primary-foreground/50"}`}>Was ₦{p.was}</div>
                   <div className="space-y-2">
+                    <OrderButton
+                      product="Fine Health Vitality"
+                      pack={`${p.tag} · ${p.b} bottles · ₦${p.now}`}
+                      className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-[#25D366] text-white py-3 text-xs font-medium hover:opacity-90 transition"
+                    >
+                      <MessageCircle className="w-3.5 h-3.5" /> Order now
+                    </OrderButton>
                     <a href={waLink} target="_blank" rel="noopener noreferrer"
-                      className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-[#25D366] text-white py-3 text-xs font-medium hover:opacity-90 transition">
-                      <MessageCircle className="w-3.5 h-3.5" /> Order on WhatsApp
-                    </a>
-                    <a href={ORDER_URL} target="_blank" rel="noopener noreferrer"
                       className={`inline-flex w-full items-center justify-center gap-1.5 rounded-full py-3 text-xs font-medium transition ${featured ? "bg-foreground text-background hover:opacity-90" : "bg-primary-foreground text-primary hover:bg-primary-foreground/90"}`}>
-                      Order form →
+                      WhatsApp →
                     </a>
                   </div>
                 </div>
@@ -351,10 +355,10 @@ function FineHealthPage() {
               <li>— You are 30+ and not traveling before delivery.</li>
             </ul>
             <div className="flex flex-wrap gap-4">
-              <a href={ORDER_URL} target="_blank" rel="noopener noreferrer"
+              <OrderButton product="Fine Health Vitality"
                 className="inline-flex items-center gap-2 rounded-full bg-primary-foreground text-primary px-8 py-4 text-sm font-medium hover:opacity-90 transition">
                 Open order form <ArrowRight className="w-4 h-4" />
-              </a>
+              </OrderButton>
               <a href="tel:+2349131541263" className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-8 py-4 text-sm font-medium hover:bg-primary-foreground/10 transition">
                 <Phone className="w-4 h-4" /> +234 913 154 1263
               </a>
