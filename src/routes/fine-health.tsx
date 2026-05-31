@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
-import { OrderButton, useOrder } from "@/components/OrderDialog";
+import { OrderButton } from "@/components/OrderDialog";
 import { Check, ShieldCheck, Leaf, Phone, MessageCircle, Star, ArrowRight, Sparkles, Flame, Heart, Droplets, Shield, Zap, Activity, Dumbbell, Pill } from "lucide-react";
 import hero from "@/assets/fh/hero-couple-BAj9MjBO.jpg";
 import bottle from "@/assets/fh/herbs-flatlay-E3vW8wHx.jpg";
@@ -24,7 +24,6 @@ export const Route = createFileRoute("/fine-health")({
   }),
 });
 
-const ORDER_URL = "https://docs.google.com/forms/d/e/1FAIpQLScVxm7294TuXCZ9it5eodzNVkDE1Q-FTwhvjJxDU77J8hcQEg/viewform";
 const WA = "https://wa.me/2349131541263";
 
 const benefits = [

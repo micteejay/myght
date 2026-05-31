@@ -16,7 +16,6 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const ORDER_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdueLJy-ATyyQ49WF0XQ8O5WGTODt5JSX2_EqZMnTgRDyoCzQ/viewform";
 const WA_URL = "https://wa.me/2349131541263";
 
 const symptoms = [

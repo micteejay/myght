@@ -17,7 +17,6 @@ export const Route = createFileRoute("/diabetes")({
   }),
 });
 
-const ORDER_URL = "https://docs.google.com/forms/d/e/1FAIpQLScEeOn5IjTHbqMSxiUgsdoAeerP8qoalzY0OQF1EzcLMVeiAA/viewform";
 const WA_URL = "https://wa.me/2349131541263";
 
 const symptoms = [

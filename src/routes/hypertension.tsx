@@ -18,7 +18,6 @@ export const Route = createFileRoute("/hypertension")({
   }),
 });
 
-const ORDER_URL = "https://docs.google.com/forms/d/e/1FAIpQLScVxm7294TuXCZ9it5eodzNVkDE1Q-FTwhvjJxDU77J8hcQEg/viewform";
 const WA_URL = "https://wa.me/2349131541263";
 
 const dangers = [
