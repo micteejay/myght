@@ -95,3 +95,27 @@
     letter-spacing: -0.01em;
   }
 }
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-spin-slow { animation: spin-slow 30s linear infinite; }
+.animate-float-soft { animation: float-soft 6s ease-in-out infinite; }
+
+.story-link { position: relative; }
+.story-link::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -4px;
+  height: 1.5px; width: 100%;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .3s ease;
+}
+.story-link:hover::after { transform: scaleX(1); transform-origin: left; }
