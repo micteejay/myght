@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Check, ShieldCheck, Leaf, Phone, MessageCircle, Star, ArrowRight, Sparkles, Clock, HeartPulse } from "lucide-react";
 import { SiteNav } from "@/components/SiteNav";
+import { OrderButton } from "@/components/OrderDialog";
 import heroMan from "@/assets/hero-man.jpg";
 import productBottle from "@/assets/product-bottle.jpg";
 import anatomy from "@/assets/anatomy.jpg";
@@ -47,7 +48,7 @@ function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <SiteNav
-        ctaHref={ORDER_URL}
+        orderProduct="GHT Prostate"
         sectionLinks={[
           { label: "Symptoms", href: "#symptoms" },
           { label: "Product", href: "#product" },
@@ -94,9 +95,9 @@ function Index() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative animate-float-soft">
             <div className="relative rounded-3xl overflow-hidden shadow-[var(--shadow-elegant)]">
-              <img src={heroMan} alt="Healthy active man in his 60s" width={1280} height={1280} className="w-full h-auto object-cover aspect-[4/5]" />
+              <img src={heroMan} alt="Healthy active man in his 60s" width={1280} height={1280} className="w-full h-auto object-cover aspect-[4/5] animate-spin-slow" />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl shadow-[var(--shadow-card)] p-5 max-w-[240px] border border-border">
               <div className="flex gap-0.5 mb-2">
@@ -220,10 +221,13 @@ function Index() {
                   <span className="font-display text-4xl font-semibold">₦{p.now}</span>
                   <span className={`text-sm line-through ${p.tag === "Best Value" ? "text-foreground/40" : "text-primary-foreground/40"}`}>₦{p.was}</span>
                 </div>
-                <a href={ORDER_URL} target="_blank" rel="noopener noreferrer"
-                  className={`inline-flex w-full items-center justify-center gap-2 rounded-full py-3 text-sm font-medium transition ${p.tag === "Best Value" ? "bg-foreground text-background hover:opacity-90" : "bg-primary-foreground text-primary hover:bg-primary-foreground/90"}`}>
+                <OrderButton
+                  product="GHT Prostate"
+                  pack={`${p.bottles} bottles · ${p.days} · ₦${p.now}`}
+                  className={`inline-flex w-full items-center justify-center gap-2 rounded-full py-3 text-sm font-medium transition ${p.tag === "Best Value" ? "bg-foreground text-background hover:opacity-90" : "bg-primary-foreground text-primary hover:bg-primary-foreground/90"}`}
+                >
                   Order pack <ArrowRight className="w-4 h-4" />
-                </a>
+                </OrderButton>
               </div>
             ))}
           </div>
@@ -290,10 +294,10 @@ function Index() {
               <li>— You know when you'll be available to receive the package.</li>
             </ul>
             <div className="flex flex-wrap gap-4">
-              <a href={ORDER_URL} target="_blank" rel="noopener noreferrer"
+              <OrderButton product="GHT Prostate"
                 className="inline-flex items-center gap-2 rounded-full bg-primary-foreground text-primary px-8 py-4 text-sm font-medium hover:opacity-90 transition">
                 Open order form <ArrowRight className="w-4 h-4" />
-              </a>
+              </OrderButton>
               <a href="tel:+2349131541263" className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-8 py-4 text-sm font-medium hover:bg-primary-foreground/10 transition">
                 <Phone className="w-4 h-4" /> +234 913 154 1263
               </a>
