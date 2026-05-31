@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
+import { OrderButton } from "@/components/OrderDialog";
 import { Check, ShieldCheck, Leaf, Phone, MessageCircle, Star, ArrowRight, Sparkles, HeartPulse, Activity, Brain, Pill, AlertTriangle } from "lucide-react";
 import hero from "@/assets/hypertension-hero.jpg";
 import bottles from "@/assets/hypertension-bottles.jpg";
@@ -71,7 +72,7 @@ function HypertensionPage() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <SiteNav
-        ctaHref={ORDER_URL}
+        orderProduct="GHT Hypertension Protocol"
         sectionLinks={[
           { label: "Protocol", href: "#protocol" },
           { label: "Pricing", href: "#pricing" },
@@ -128,9 +129,9 @@ function HypertensionPage() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative animate-float-soft">
             <div className="relative rounded-3xl overflow-hidden shadow-[var(--shadow-elegant)]">
-              <img src={hero} alt="Blood pressure monitor with hibiscus and herbs" width={1280} height={1280} className="w-full h-auto object-cover aspect-square" />
+              <img src={hero} alt="Blood pressure monitor with hibiscus and herbs" width={1280} height={1280} className="w-full h-auto object-cover aspect-square animate-spin-slow" />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl shadow-[var(--shadow-card)] p-5 max-w-[260px] border border-border">
               <div className="flex items-center gap-2 mb-2">
@@ -299,10 +300,13 @@ function HypertensionPage() {
                       className={`inline-flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-medium transition ${isFeatured ? "bg-[#25D366] text-white hover:opacity-90" : "bg-[#25D366] text-white hover:opacity-90"}`}>
                       <MessageCircle className="w-4 h-4" /> Order on WhatsApp
                     </a>
-                    <a href={ORDER_URL} target="_blank" rel="noopener noreferrer"
-                      className={`inline-flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-medium transition ${isFeatured ? "bg-foreground text-background hover:opacity-90" : "bg-primary-foreground text-primary hover:bg-primary-foreground/90"}`}>
-                      Use order form <ArrowRight className="w-4 h-4" />
-                    </a>
+                    <OrderButton
+                      product="GHT Hypertension Protocol"
+                      pack={`${p.d} · ${p.b} bottles · ₦${p.now}`}
+                      className={`inline-flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-medium transition ${isFeatured ? "bg-foreground text-background hover:opacity-90" : "bg-primary-foreground text-primary hover:bg-primary-foreground/90"}`}
+                    >
+                      Order this pack <ArrowRight className="w-4 h-4" />
+                    </OrderButton>
                   </div>
                 </div>
               );
@@ -365,10 +369,10 @@ function HypertensionPage() {
               <li>— Not traveling or unavailable before delivery.</li>
             </ul>
             <div className="flex flex-wrap gap-4">
-              <a href={ORDER_URL} target="_blank" rel="noopener noreferrer"
+              <OrderButton product="GHT Hypertension Protocol"
                 className="inline-flex items-center gap-2 rounded-full bg-primary-foreground text-primary px-8 py-4 text-sm font-medium hover:opacity-90 transition">
                 Open order form <ArrowRight className="w-4 h-4" />
-              </a>
+              </OrderButton>
               <a href="tel:+2349131541263" className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-8 py-4 text-sm font-medium hover:bg-primary-foreground/10 transition">
                 <Phone className="w-4 h-4" /> +234 913 154 1263
               </a>
