@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { ArrowRight, MessageCircle, Mail, ShieldCheck } from "lucide-react";
 
 export const ORDER_EMAIL = "gbengafaboya@gmail.com";
-export const ORDER_WA = "2349131541263";
+export const ORDER_WA = "2347030004503";
 
 type OrderCtx = {
   open: (product?: string, pack?: string) => void;
@@ -72,13 +72,9 @@ export function OrderProvider({ children }: { children: ReactNode }) {
     const subject = `New Order — ${data.product} (${data.pack})`;
     const mailUrl = `mailto:${ORDER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines)}`;
 
-    // Fire both: open WhatsApp in new tab, then trigger email client
+    // Fire both simultaneously in the same user-gesture click handler
+    window.open(mailUrl, "_blank", "noopener,noreferrer");
     window.open(waUrl, "_blank", "noopener,noreferrer");
-    setTimeout(() => {
-      const a = document.createElement("a");
-      a.href = mailUrl;
-      a.click();
-    }, 400);
     setIsOpen(false);
   };
 
@@ -121,7 +117,7 @@ export function OrderProvider({ children }: { children: ReactNode }) {
             <textarea name="notes" rows={2} placeholder="Notes (best delivery time, landmark...)" className={field} />
 
             <div className="rounded-xl bg-secondary/40 border border-border p-3 text-xs text-muted-foreground">
-              Submitting will open WhatsApp <span className="text-accent">+234 913 154 1263</span> and email <span className="text-accent">{ORDER_EMAIL}</span> with your details. Please send both for fastest confirmation.
+              Submitting will open WhatsApp <span className="text-accent">+234 703 000 4503</span> and email <span className="text-accent">{ORDER_EMAIL}</span> at the same time with your details. Please send both for fastest confirmation.
             </div>
 
             <div className="flex flex-col sm:flex-row gap-2 pt-1">

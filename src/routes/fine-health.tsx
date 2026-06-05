@@ -24,7 +24,7 @@ export const Route = createFileRoute("/fine-health")({
   }),
 });
 
-const WA = "https://wa.me/2349131541263";
+const WA = "https://wa.me/2347030004503";
 
 const benefits = [
   { i: Zap, t: "Lasting Stamina", d: "From a minute to 40+ minutes per round." },
@@ -307,6 +307,34 @@ function FineHealthPage() {
             <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">Real stories</p>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold">A million men. A million reasons to smile.</h2>
           </div>
+
+          {/* Video testimonial */}
+          <div className="mb-10 rounded-3xl overflow-hidden border border-border shadow-[var(--shadow-elegant)] bg-card">
+            <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/hluZ-lqVOg8"
+                title="Fine Health customer testimonial"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          {/* Story GIFs */}
+          <div className="grid sm:grid-cols-3 gap-5 mb-12">
+            {[
+              "https://finehealth.lovable.app/assets/story-aaaa-CGmNK-Z-.gif",
+              "https://finehealth.lovable.app/assets/story-gif-CU7ywdZc.gif",
+              "https://finehealth.lovable.app/assets/story-bbbb-DKFuqPNF.gif",
+            ].map((src, i) => (
+              <div key={src} className="rounded-2xl overflow-hidden border border-border bg-card shadow-[var(--shadow-card)]">
+                <img src={src} alt={`Customer story ${i + 1}`} loading="lazy" className="w-full h-auto block" />
+              </div>
+            ))}
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {testimonials.map(t => (
               <div key={t.n} className="rounded-2xl bg-card border border-border p-7 shadow-[var(--shadow-card)]">
@@ -358,8 +386,8 @@ function FineHealthPage() {
                 className="inline-flex items-center gap-2 rounded-full bg-primary-foreground text-primary px-8 py-4 text-sm font-medium hover:opacity-90 transition">
                 Open order form <ArrowRight className="w-4 h-4" />
               </OrderButton>
-              <a href="tel:+2349131541263" className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-8 py-4 text-sm font-medium hover:bg-primary-foreground/10 transition">
-                <Phone className="w-4 h-4" /> +234 913 154 1263
+              <a href="tel:+2347030004503" className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-8 py-4 text-sm font-medium hover:bg-primary-foreground/10 transition">
+                <Phone className="w-4 h-4" /> +234 703 000 4503
               </a>
             </div>
           </div>
@@ -380,7 +408,7 @@ function FineHealthPage() {
             <a href={WA} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-secondary grid place-items-center hover:bg-accent hover:text-accent-foreground transition">
               <MessageCircle className="w-4 h-4" />
             </a>
-            <a href="tel:+2349131541263" className="w-10 h-10 rounded-full bg-secondary grid place-items-center hover:bg-accent hover:text-accent-foreground transition">
+            <a href="tel:+2347030004503" className="w-10 h-10 rounded-full bg-secondary grid place-items-center hover:bg-accent hover:text-accent-foreground transition">
               <Phone className="w-4 h-4" />
             </a>
           </div>
