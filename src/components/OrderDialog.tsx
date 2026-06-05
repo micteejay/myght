@@ -1,9 +1,9 @@
 import { createContext, useContext, useState, ReactNode, FormEvent } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { ArrowRight, MessageCircle, Mail, ShieldCheck } from "lucide-react";
+import { ORDER_EMAIL, WHATSAPP_NUMBER as ORDER_WA, WHATSAPP_DISPLAY } from "@/config/contact";
 
-export const ORDER_EMAIL = "gbengafaboya@gmail.com";
-export const ORDER_WA = "2347030004503";
+export { ORDER_EMAIL, ORDER_WA };
 
 type OrderCtx = {
   open: (product?: string, pack?: string) => void;
@@ -117,7 +117,7 @@ export function OrderProvider({ children }: { children: ReactNode }) {
             <textarea name="notes" rows={2} placeholder="Notes (best delivery time, landmark...)" className={field} />
 
             <div className="rounded-xl bg-secondary/40 border border-border p-3 text-xs text-muted-foreground">
-              Submitting will open WhatsApp <span className="text-accent">+234 703 000 4503</span> and email <span className="text-accent">{ORDER_EMAIL}</span> at the same time with your details. Please send both for fastest confirmation.
+              Submitting will open WhatsApp <span className="text-accent">{WHATSAPP_DISPLAY}</span> and email <span className="text-accent">{ORDER_EMAIL}</span> at the same time with your details. Please send both for fastest confirmation.
             </div>
 
             <div className="flex flex-col sm:flex-row gap-2 pt-1">

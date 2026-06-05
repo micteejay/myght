@@ -1,3 +1,4 @@
+import { WHATSAPP_URL, WHATSAPP_TEL, WHATSAPP_DISPLAY } from "@/config/contact";
 import { createFileRoute } from "@tanstack/react-router";
 import { Check, ShieldCheck, Leaf, Phone, MessageCircle, Star, ArrowRight, Sparkles, Clock, HeartPulse } from "lucide-react";
 import { SiteNav } from "@/components/SiteNav";
@@ -16,7 +17,7 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const WA_URL = "https://wa.me/2347030004503";
+const WA_URL = WHATSAPP_URL;
 
 const symptoms = [
   { t: "Hesitation", d: "You stand at the toilet, muscles tense, and nothing comes." },
@@ -297,8 +298,8 @@ function Index() {
                 className="inline-flex items-center gap-2 rounded-full bg-primary-foreground text-primary px-8 py-4 text-sm font-medium hover:opacity-90 transition">
                 Open order form <ArrowRight className="w-4 h-4" />
               </OrderButton>
-              <a href="tel:+2347030004503" className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-8 py-4 text-sm font-medium hover:bg-primary-foreground/10 transition">
-                <Phone className="w-4 h-4" /> +234 703 000 4503
+              <a href=WHATSAPP_TEL className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-8 py-4 text-sm font-medium hover:bg-primary-foreground/10 transition">
+                <Phone className="w-4 h-4" /> {WHATSAPP_DISPLAY}
               </a>
             </div>
           </div>
@@ -319,7 +320,7 @@ function Index() {
             <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-secondary grid place-items-center hover:bg-accent hover:text-accent-foreground transition">
               <MessageCircle className="w-4 h-4" />
             </a>
-            <a href="tel:+2347030004503" className="w-10 h-10 rounded-full bg-secondary grid place-items-center hover:bg-accent hover:text-accent-foreground transition">
+            <a href=WHATSAPP_TEL className="w-10 h-10 rounded-full bg-secondary grid place-items-center hover:bg-accent hover:text-accent-foreground transition">
               <Phone className="w-4 h-4" />
             </a>
           </div>
