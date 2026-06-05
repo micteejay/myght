@@ -1,9 +1,9 @@
 import { createContext, useContext, useState, ReactNode, FormEvent } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { ArrowRight, MessageCircle, Mail, ShieldCheck } from "lucide-react";
+import { ORDER_EMAIL, WHATSAPP_NUMBER as ORDER_WA, WHATSAPP_DISPLAY } from "@/config/contact";
 
-export const ORDER_EMAIL = "gbengafaboya@gmail.com";
-export const ORDER_WA = "2347030004503";
+export { ORDER_EMAIL, ORDER_WA };
 
 type OrderCtx = {
   open: (product?: string, pack?: string) => void;
