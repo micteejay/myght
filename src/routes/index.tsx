@@ -1,3 +1,4 @@
+import { WHATSAPP_URL, WHATSAPP_TEL, WHATSAPP_DISPLAY } from "@/config/contact";
 import { createFileRoute } from "@tanstack/react-router";
 import { Check, ShieldCheck, Leaf, Phone, MessageCircle, Star, ArrowRight, Sparkles, Clock, HeartPulse } from "lucide-react";
 import { SiteNav } from "@/components/SiteNav";
