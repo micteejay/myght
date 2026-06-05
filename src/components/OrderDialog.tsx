@@ -117,7 +117,7 @@ export function OrderProvider({ children }: { children: ReactNode }) {
             <textarea name="notes" rows={2} placeholder="Notes (best delivery time, landmark...)" className={field} />
 
             <div className="rounded-xl bg-secondary/40 border border-border p-3 text-xs text-muted-foreground">
-              Submitting will open WhatsApp <span className="text-accent">+234 703 000 4503</span> and email <span className="text-accent">{ORDER_EMAIL}</span> at the same time with your details. Please send both for fastest confirmation.
+              Submitting will open WhatsApp <span className="text-accent">{WHATSAPP_DISPLAY}</span> and email <span className="text-accent">{ORDER_EMAIL}</span> at the same time with your details. Please send both for fastest confirmation.
             </div>
 
             <div className="flex flex-col sm:flex-row gap-2 pt-1">
