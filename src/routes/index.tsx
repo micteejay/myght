@@ -124,6 +124,31 @@ function Index() {
         </div>
       </section>
 
+      {/* VIDEO */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-secondary/30">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8">
+            <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-3">Watch</p>
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold">See how GHT Prostate works</h2>
+          </div>
+          <div className="relative w-full overflow-hidden rounded-3xl shadow-[var(--shadow-elegant)] aspect-video bg-black">
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/hk1c7PHvvwc"
+              title="GHT Prostate product"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+          <div className="mt-8 rounded-3xl overflow-hidden bg-card border border-border p-4 sm:p-6">
+            <img src={prostateAnatomy.url} alt="Normal, inflamed and enlarged prostate gland" loading="lazy" className="w-full h-auto rounded-2xl" />
+            <p className="text-center text-sm text-muted-foreground mt-3">Normal prostate · Inflamed prostate · Enlarged prostate</p>
+          </div>
+        </div>
+      </section>
+
+
       {/* SYMPTOMS */}
       <section id="symptoms" className="py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
