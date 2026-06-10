@@ -311,6 +311,19 @@ function Index() {
               </figure>
             ))}
           </div>
+
+          <div className="mt-12 grid md:grid-cols-2 gap-6 items-start">
+            <figure className="rounded-3xl bg-card border border-border p-4 shadow-[var(--shadow-card)]">
+              <img src={testimonyWa.url} alt="WhatsApp testimony from a verified GHT customer" loading="lazy" className="w-full h-auto rounded-2xl" />
+              <figcaption className="text-center text-sm text-muted-foreground mt-3">Real WhatsApp message from a verified customer.</figcaption>
+            </figure>
+            <figure className="rounded-3xl bg-card border border-border p-6 shadow-[var(--shadow-card)] flex flex-col items-center justify-center text-center">
+              <img src={nafdac.url} alt="NAFDAC certificate of listing for GHT Prostbeta Tablets" loading="lazy" className="w-full h-auto rounded-2xl" />
+              <figcaption className="text-sm text-muted-foreground mt-4">
+                <span className="font-medium text-foreground">NAFDAC certified.</span> Listing No. A7-100594L — issued to SD GHT Health Care Nig Ltd.
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
