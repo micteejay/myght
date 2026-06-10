@@ -6,6 +6,16 @@ import { OrderButton } from "@/components/OrderDialog";
 import heroMan from "@/assets/hero-man.jpg";
 import productBottle from "@/assets/product-bottle.jpg";
 import anatomy from "@/assets/anatomy.jpg";
+import prostateAnatomy from "@/assets/prostate-anatomy.jpg.asset.json";
+import holdToilet from "@/assets/hold-toilet.png.asset.json";
+import catheterBelt from "@/assets/catheter-belt.jpg.asset.json";
+import testimonyWa from "@/assets/testimony-wa.jpg.asset.json";
+import nafdac from "@/assets/nafdac.jpg.asset.json";
+import pack2 from "@/assets/pack-2.png.asset.json";
+import pack3 from "@/assets/pack-3.png.asset.json";
+import pack4 from "@/assets/pack-4.png.asset.json";
+import pack5 from "@/assets/pack-5.png.asset.json";
+import pack6 from "@/assets/pack-6.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -29,12 +39,12 @@ const symptoms = [
 ];
 
 const packs = [
-  { bottles: 2, days: "15 days", was: "55,500", now: "45,500" },
-  { bottles: 3, days: "20 days", was: "80,500", now: "67,500", tag: "Popular" },
-  { bottles: 4, days: "25 days", was: "95,500", now: "87,500" },
-  { bottles: 5, days: "30 days", was: "118,500", now: "103,500" },
-  { bottles: 6, days: "1 month +", was: "140,500", now: "133,500", tag: "Best Value" },
-  { bottles: 10, days: "2 months — full treatment", was: "250,500", now: "217,500", tag: "Full Treatment" },
+  { bottles: 2, days: "15 days", was: "55,500", now: "45,500", img: pack2.url },
+  { bottles: 3, days: "20 days", was: "80,500", now: "67,500", tag: "Popular", img: pack3.url },
+  { bottles: 4, days: "25 days", was: "95,500", now: "87,500", img: pack4.url },
+  { bottles: 5, days: "30 days", was: "118,500", now: "103,500", img: pack5.url },
+  { bottles: 6, days: "1 month +", was: "140,500", now: "133,500", tag: "Best Value", img: pack6.url },
+  { bottles: 10, days: "2 months — full treatment", was: "250,500", now: "217,500", tag: "Full Treatment", img: pack6.url },
 ];
 
 const faqs = [
@@ -114,6 +124,31 @@ function Index() {
         </div>
       </section>
 
+      {/* VIDEO */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-secondary/30">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8">
+            <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-3">Watch</p>
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold">See how GHT Prostate works</h2>
+          </div>
+          <div className="relative w-full overflow-hidden rounded-3xl shadow-[var(--shadow-elegant)] aspect-video bg-black">
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/hk1c7PHvvwc"
+              title="GHT Prostate product"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+          <div className="mt-8 rounded-3xl overflow-hidden bg-card border border-border p-4 sm:p-6">
+            <img src={prostateAnatomy.url} alt="Normal, inflamed and enlarged prostate gland" loading="lazy" className="w-full h-auto rounded-2xl" />
+            <p className="text-center text-sm text-muted-foreground mt-3">Normal prostate · Inflamed prostate · Enlarged prostate</p>
+          </div>
+        </div>
+      </section>
+
+
       {/* SYMPTOMS */}
       <section id="symptoms" className="py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
@@ -138,6 +173,21 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* REAL-LIFE IMAGES */}
+      <section className="py-12 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto grid sm:grid-cols-2 gap-6">
+          <figure className="rounded-3xl overflow-hidden border border-border bg-card">
+            <img src={holdToilet.url} alt="Man struggling with urinary urgency near the toilet" loading="lazy" className="w-full h-72 object-cover" />
+            <figcaption className="p-5 text-sm text-muted-foreground">The constant urgency and hesitation rob you of normal life — at home, at work, on the road.</figcaption>
+          </figure>
+          <figure className="rounded-3xl overflow-hidden border border-border bg-card">
+            <img src={catheterBelt.url} alt="Man relying on a catheter due to severe prostate enlargement" loading="lazy" className="w-full h-72 object-cover" />
+            <figcaption className="p-5 text-sm text-muted-foreground">Ignored long enough, BPH ends in catheters, infections and surgery. It doesn't have to.</figcaption>
+          </figure>
+        </div>
+      </section>
+
 
       {/* PRODUCT */}
       <section id="product" className="py-16 sm:py-24 px-4 sm:px-6 bg-secondary/40">
@@ -212,6 +262,9 @@ function Index() {
                     {p.tag}
                   </span>
                 )}
+                <div className={`mb-6 -mx-2 rounded-2xl p-3 flex items-center justify-center ${p.tag === "Best Value" ? "bg-foreground/5" : "bg-primary-foreground/10"}`}>
+                  <img src={p.img} alt={`GHT Prostate ${p.bottles}-bottle pack`} loading="lazy" className="h-40 w-auto object-contain" />
+                </div>
                 <div className="flex items-baseline justify-between mb-2">
                   <h3 className="font-display text-3xl font-semibold">{p.bottles} bottles</h3>
                   <Clock className="w-4 h-4 opacity-60" />
@@ -257,6 +310,19 @@ function Index() {
                 </figcaption>
               </figure>
             ))}
+          </div>
+
+          <div className="mt-12 grid md:grid-cols-2 gap-6 items-start">
+            <figure className="rounded-3xl bg-card border border-border p-4 shadow-[var(--shadow-card)]">
+              <img src={testimonyWa.url} alt="WhatsApp testimony from a verified GHT customer" loading="lazy" className="w-full h-auto rounded-2xl" />
+              <figcaption className="text-center text-sm text-muted-foreground mt-3">Real WhatsApp message from a verified customer.</figcaption>
+            </figure>
+            <figure className="rounded-3xl bg-card border border-border p-6 shadow-[var(--shadow-card)] flex flex-col items-center justify-center text-center">
+              <img src={nafdac.url} alt="NAFDAC certificate of listing for GHT Prostbeta Tablets" loading="lazy" className="w-full h-auto rounded-2xl" />
+              <figcaption className="text-sm text-muted-foreground mt-4">
+                <span className="font-medium text-foreground">NAFDAC certified.</span> Listing No. A7-100594L — issued to SD GHT Health Care Nig Ltd.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
