@@ -114,7 +114,7 @@ function Index() {
 
           <div className="relative animate-float-soft">
             <div className="relative rounded-3xl overflow-hidden shadow-[var(--shadow-elegant)]">
-              <img src={heroMan} alt="Healthy active man in his 60s" width={1280} height={1280} className="w-full h-auto object-cover aspect-[4/5] animate-spin-slow" />
+              <img src={BLOG.hold2} alt="Healthy active man in his 60s" width={1280} height={1280} className="w-full h-auto object-cover aspect-[4/5] animate-spin-slow" />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl shadow-[var(--shadow-card)] p-5 max-w-[240px] border border-border">
               <div className="flex gap-0.5 mb-2">
@@ -149,7 +149,7 @@ function Index() {
             />
           </div>
           <div className="mt-8 rounded-3xl overflow-hidden bg-card border border-border p-4 sm:p-6">
-            <img src={prostateAnatomy.url} alt="Normal, inflamed and enlarged prostate gland" loading="lazy" className="w-full h-auto rounded-2xl" />
+            <img src={BLOG.bladder} alt="Normal, inflamed and enlarged prostate gland" loading="lazy" className="w-full h-auto rounded-2xl" />
             <p className="text-center text-sm text-muted-foreground mt-3">Normal prostate · Inflamed prostate · Enlarged prostate</p>
           </div>
         </div>
@@ -185,11 +185,11 @@ function Index() {
       <section className="py-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto grid sm:grid-cols-2 gap-6">
           <figure className="rounded-3xl overflow-hidden border border-border bg-card">
-            <img src={holdToilet.url} alt="Man struggling with urinary urgency near the toilet" loading="lazy" className="w-full h-72 object-cover" />
+            <img src={BLOG.hold} alt="Man struggling with urinary urgency near the toilet" loading="lazy" className="w-full h-72 object-cover" />
             <figcaption className="p-5 text-sm text-muted-foreground">The constant urgency and hesitation rob you of normal life — at home, at work, on the road.</figcaption>
           </figure>
           <figure className="rounded-3xl overflow-hidden border border-border bg-card">
-            <img src={catheterBelt.url} alt="Man relying on a catheter due to severe prostate enlargement" loading="lazy" className="w-full h-72 object-cover" />
+            <img src={BLOG.bphMan} alt="Man relying on a catheter due to severe prostate enlargement" loading="lazy" className="w-full h-72 object-cover" />
             <figcaption className="p-5 text-sm text-muted-foreground">Ignored long enough, BPH ends in catheters, infections and surgery. It doesn't have to.</figcaption>
           </figure>
         </div>
@@ -201,7 +201,7 @@ function Index() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <div className="absolute inset-0 rounded-full blur-3xl opacity-30" style={{ background: "var(--gradient-hero)" }} />
-            <img src={productBottle} alt="GHT herbal prostate formula bottle" width={1024} height={1024} loading="lazy" className="relative w-full rounded-3xl shadow-[var(--shadow-elegant)]" />
+            <img src={BLOG.prostateDiagram} alt="GHT herbal prostate formula bottle" width={1024} height={1024} loading="lazy" className="relative w-full rounded-3xl shadow-[var(--shadow-elegant)]" />
           </div>
           <div>
             <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">Meet GHT</p>
@@ -232,7 +232,7 @@ function Index() {
       <section className="py-16 sm:py-24 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-12 items-center">
           <div className="lg:col-span-2 rounded-3xl overflow-hidden bg-secondary/40 p-8">
-            <img src={anatomy} alt="Prostate anatomy illustration" width={1024} height={768} loading="lazy" className="w-full h-auto" />
+            <img src={BLOG.bladder} alt="Prostate anatomy illustration" width={1024} height={768} loading="lazy" className="w-full h-auto" />
           </div>
           <div className="lg:col-span-3">
             <p className="text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">Why it happens</p>
@@ -321,11 +321,11 @@ function Index() {
 
           <div className="mt-12 grid md:grid-cols-2 gap-6 items-start">
             <figure className="rounded-3xl bg-card border border-border p-4 shadow-[var(--shadow-card)]">
-              <img src={testimonyWa.url} alt="WhatsApp testimony from a verified GHT customer" loading="lazy" className="w-full h-auto rounded-2xl" />
+              <img src={BLOG.testimony1} alt="WhatsApp testimony from a verified GHT customer" loading="lazy" className="w-full h-auto rounded-2xl" />
               <figcaption className="text-center text-sm text-muted-foreground mt-3">Real WhatsApp message from a verified customer.</figcaption>
             </figure>
             <figure className="rounded-3xl bg-card border border-border p-6 shadow-[var(--shadow-card)] flex flex-col items-center justify-center text-center">
-              <img src={nafdac.url} alt="NAFDAC certificate of listing for GHT Prostbeta Tablets" loading="lazy" className="w-full h-auto rounded-2xl" />
+              <img src={BLOG.nafdac} alt="NAFDAC certificate of listing for GHT Prostbeta Tablets" loading="lazy" className="w-full h-auto rounded-2xl" />
               <figcaption className="text-sm text-muted-foreground mt-4">
                 <span className="font-medium text-foreground">NAFDAC certified.</span> Listing No. A7-100594L — issued to SD GHT Health Care Nig Ltd.
               </figcaption>
