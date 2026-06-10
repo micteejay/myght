@@ -6,6 +6,16 @@ import { OrderButton } from "@/components/OrderDialog";
 import heroMan from "@/assets/hero-man.jpg";
 import productBottle from "@/assets/product-bottle.jpg";
 import anatomy from "@/assets/anatomy.jpg";
+import prostateAnatomy from "@/assets/prostate-anatomy.jpg.asset.json";
+import holdToilet from "@/assets/hold-toilet.png.asset.json";
+import catheterBelt from "@/assets/catheter-belt.jpg.asset.json";
+import testimonyWa from "@/assets/testimony-wa.jpg.asset.json";
+import nafdac from "@/assets/nafdac.jpg.asset.json";
+import pack2 from "@/assets/pack-2.png.asset.json";
+import pack3 from "@/assets/pack-3.png.asset.json";
+import pack4 from "@/assets/pack-4.png.asset.json";
+import pack5 from "@/assets/pack-5.png.asset.json";
+import pack6 from "@/assets/pack-6.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
