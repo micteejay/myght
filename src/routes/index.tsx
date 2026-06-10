@@ -39,12 +39,12 @@ const symptoms = [
 ];
 
 const packs = [
-  { bottles: 2, days: "15 days", was: "55,500", now: "45,500" },
-  { bottles: 3, days: "20 days", was: "80,500", now: "67,500", tag: "Popular" },
-  { bottles: 4, days: "25 days", was: "95,500", now: "87,500" },
-  { bottles: 5, days: "30 days", was: "118,500", now: "103,500" },
-  { bottles: 6, days: "1 month +", was: "140,500", now: "133,500", tag: "Best Value" },
-  { bottles: 10, days: "2 months — full treatment", was: "250,500", now: "217,500", tag: "Full Treatment" },
+  { bottles: 2, days: "15 days", was: "55,500", now: "45,500", img: pack2.url },
+  { bottles: 3, days: "20 days", was: "80,500", now: "67,500", tag: "Popular", img: pack3.url },
+  { bottles: 4, days: "25 days", was: "95,500", now: "87,500", img: pack4.url },
+  { bottles: 5, days: "30 days", was: "118,500", now: "103,500", img: pack5.url },
+  { bottles: 6, days: "1 month +", was: "140,500", now: "133,500", tag: "Best Value", img: pack6.url },
+  { bottles: 10, days: "2 months — full treatment", was: "250,500", now: "217,500", tag: "Full Treatment", img: pack6.url },
 ];
 
 const faqs = [
