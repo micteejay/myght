@@ -174,6 +174,21 @@ function Index() {
         </div>
       </section>
 
+      {/* REAL-LIFE IMAGES */}
+      <section className="py-12 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto grid sm:grid-cols-2 gap-6">
+          <figure className="rounded-3xl overflow-hidden border border-border bg-card">
+            <img src={holdToilet.url} alt="Man struggling with urinary urgency near the toilet" loading="lazy" className="w-full h-72 object-cover" />
+            <figcaption className="p-5 text-sm text-muted-foreground">The constant urgency and hesitation rob you of normal life — at home, at work, on the road.</figcaption>
+          </figure>
+          <figure className="rounded-3xl overflow-hidden border border-border bg-card">
+            <img src={catheterBelt.url} alt="Man relying on a catheter due to severe prostate enlargement" loading="lazy" className="w-full h-72 object-cover" />
+            <figcaption className="p-5 text-sm text-muted-foreground">Ignored long enough, BPH ends in catheters, infections and surgery. It doesn't have to.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+
       {/* PRODUCT */}
       <section id="product" className="py-16 sm:py-24 px-4 sm:px-6 bg-secondary/40">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
