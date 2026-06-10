@@ -3,19 +3,25 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Check, ShieldCheck, Leaf, Phone, MessageCircle, Star, ArrowRight, Sparkles, Clock, HeartPulse } from "lucide-react";
 import { SiteNav } from "@/components/SiteNav";
 import { OrderButton } from "@/components/OrderDialog";
-import heroMan from "@/assets/hero-man.jpg";
-import productBottle from "@/assets/product-bottle.jpg";
-import anatomy from "@/assets/anatomy.jpg";
-import prostateAnatomy from "@/assets/prostate-anatomy.jpg.asset.json";
-import holdToilet from "@/assets/hold-toilet.png.asset.json";
-import catheterBelt from "@/assets/catheter-belt.jpg.asset.json";
-import testimonyWa from "@/assets/testimony-wa.jpg.asset.json";
-import nafdac from "@/assets/nafdac.jpg.asset.json";
-import pack2 from "@/assets/pack-2.png.asset.json";
-import pack3 from "@/assets/pack-3.png.asset.json";
-import pack4 from "@/assets/pack-4.png.asset.json";
-import pack5 from "@/assets/pack-5.png.asset.json";
-import pack6 from "@/assets/pack-6.png.asset.json";
+
+// Source-of-truth images from the official GHT blog
+const BLOG = {
+  bladder: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjBRgJHFihsxKmGazC5t-9Vz3AWTB17PWLlIb4RndNmEr5VRYtI_oQBEN_-TIJH7nJ33rGCypWysgLIg7tdyqMhVIKXpuoMYERX_G2lAsS_nT7XhYaSc-2igrES6Dd3YPN63SCKizFlNWd_fp2ej5dGv8kbiMh6l8MCXTCT4hrEgZopfzv2U-jxWx1zRE/s720/BLADDER.jpg",
+  hold: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0STNyd3N_vAihaUtKgd5FNNbZOt42QcuT61vQlbRgJHiKb4-BXtGtNMaHgEhl6UQFYVo8roPAFxL4mP_Br2AJGfsRaQmUhZnpYdqIAb5qi-W2jHAQnUvAwJA6wgL-3yG8NebpmHg7Ko_WxflsHkj9_oE3cd2Cao6hRW7mxzyjCAypSUCoru2pIKkQGtU/s355/HOLD.png",
+  hold2: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjhyCzUwpQ5ct0sUh95vZfB-9TyNC8XI3KjYYMSdZtcjEXCiSlrnXqSXefBZn5A9jQS-5nJBeajxqpzvSFWMw1A2U7Wcb581fBMdhvyRY1lMXpfbloaFe_iATg9d43Lb3avujJWCDVInV-rG9H646s7i_yuLJEc3UxMsQVV5snfldByPGPEtq2Z2lYIVRg/s1600/HOLD2.jpg",
+  bphMan: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjY5d8HE-16rXef5hDfg6ulb6a6b5wqnXfsf1dOMt-zspWPZx6joNq3Q7fQKaLHlN92pbjMJhKnye91edbB5DxIzYyvpoeZMrUT2dvdkP5-wq6HmYF1CfKVLsggAhWupkOgx7ENYY8QwKh3JRoL1vMys_OkeUcr3HFS5Cv4Pc7nrLhk2wWc1dGchRXM8SI/s1280/image.jpg",
+  prostateDiagram: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj5yXntbumb5yU08rCQfJ4VJOlFLxaAlel9L3f6s2Oo6cnELBuanJ1pj0N2oIUxTOWuvgQa0SrX0BuA18bL6FBOpH3kaD0lKNBayndg_Uw4FDM-gSRO3XAEhjaSI-mXpiEZHlor3dN88jnQ8MG3ykE7N709GPOGj7wTfNpwwiudkcwNz89ucP70L_RkIyc/s742/unnamed.jpg",
+  pack2: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgSS7X2IpcZecUOz8aVg823hS75GJZI6F7BzL1UoQ79sKlrzF4qWaxHgdm2oW-GxHYgNT2RZIlYOJQCRV518m-xj925-d2fpaJWaTa3BxeTkIy0WDyGyiGkHrJwxpnKUGMn-nvhHNNdjZNJTVDEnb7nGx8EcREo1tJ8imrHLeeMkjyTmCvvsSJG-TCxj1Q/s267/prostate%202%20bottle.png",
+  pack3: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj5XTP2aD4318G0nwIzajKeR5O-wQU9Tc7QS4OohYaLSDO2vZdD3S7aixnEvMCgeW_yORfW91TFhDr8KGRplAt3eLjv2uQG37fPJd1-9wDd5mqcJkJNweuPY3Rm2XA6EsTeUJ5K5Oq37Z267KuAAmKsayrAV1ikplCLoPc6YYNQR9zc0qw_p-v-mPDv74k/s398/prostate%203%20bottle.png",
+  pack4: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3VtXRquIcjtotK5-cuswZWwULlXOp_hyIaZduTuHwLq3yH3rgxPgtNFrZjE0wpq09dJzqneWDlH9UkxosGlo78oPTM_OI3Vsi5gNUlhLZVp4VEfi1sRStED3bdpumUUNEQr4lQkB4_-nKiaPNBZJ4RPXxP-DTJmw2TnhvWJHrFyXmCYEu1MLIZmUpXNY/s481/prostate%204%20bottles.png",
+  pack5: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNSToo4WoZv12g3hl1yhJ19ch0HXOdoHAxpC1UBnAwfgGj3tAVm6APrFET6dKY1svvZmQiIXbxe7gd_iAM-umWUT-K5qyOJjElsYYafciAwmwCU1UFe-qTAp3FOXLXAxCA8Us13m1t4xwh5VSpIIri2tT-m1omG8TOXJMfoC_v-WVQIbbQ48iTyZfeUN4/s423/prostate%205%20bottless.png",
+  pack6: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCGrv7BUNKbXVHtJxz9xb3zABrxVzErr_PBivWoeAxfIwGP4H8Lnh0PizWpmsmmOQiyZXXLcOSEw1KKYLOfyVh6dcofL6FRsKFyUCVt9We09J_NBfsR0pTXrNlFQtSfqqtxaXff1-ca4ZBvzVfZwahUChRqPgIC8eTwXwhZ7sx9v6gtR-BI47FGguIz5o/s421/prostate%206%20bottles.png",
+  pack10: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghpFEv-HkgvkZlSJiQJkj2cR4uuY72QLRSbTlTpvytd10Qs6OLDY4sLXCh52isXUzFlpTySbk9BVNovggVn67IPToP4XJmuh_iObFcntw5B-kx28A3-cOCzTF1C4JlEnx8eAv5D1yT8VoDYAyjCoK85uDG42SN5clBpZDZvdIJ9TQ9mQey8MRsFfi4W04/s1500/SEVERE%20STAGE%204%20PROSTATE%20CANCER%20SOLUTION%20PACK.jpg",
+  nafdac: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBlNf6fqvmxX0K2aG2-gsVT_FtECJZ4DdcPz7SGbuBo4Y6U_WBE5bOWM5zzxuoxWINWDptLPyH0ltS69oQBsVTLT5LQ-iGIkpTN6ODBWdgo9K7DA2f1QmOT_MyfTZFYjXQQmMZ5bgXaHp5J6MXkLhXYNFKdFQt560qWj_VwAicyo6RBCf5-TQa0R2pXZY/s264/unnamed.png",
+  testimony1: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwlXCPmfhHu_8btnJ6drM_PjBSQ5sdI88SzBRp174AAi0hAH_L6Hj8Xtau9-ty8V9XrT_9qryBRCQ7L4xI3Yh7oTTSKM4cZx2ApVn7WO35dlQXVTyqh3HTwduUj78QBku8pGijqiIOWB7kzV82m55onIEuH26KC7djynAb85QRwMdmVAJlFMFlZSWLVf8/s638/testimony.jpg",
+  testimony2: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFY-IQn5g3jiLu_tf0_m_JK__ve8u7Lx53XsQ_uhudeJX002mvjw5OyEvIqhKYtRLDulQV770MVRzAz0WGYXoTnEGBZie9CzwEImYdxGLvuWb_lQAEw4uU_ApfP4FG4SGi9ezqgbdB8wAy26FvK2CN0BjBlo3GDaqCEUHVCl1lyWknfz-WC3fa0_POu1I/s1280/testimony%202.jpg",
+  testimony3: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihY7XousqzshXrBsypvgBOQ2X-IKnSFWfpXptTJoPJD8A4Av1YqI_GVtmh4MCgAUMV-BNgfUEHoVdCuPU_0lfFfpj6Kkn2SDcMENNhHVccKMi6ZebgLfW8M4bXH96Ikaq1d8eJwSbWMVjqgNZdyVtki_M47HF3jlGh1C-ZPe_DoC3eo2wRplPuawucvAw/s1280/testimony%203.jpg",
+};
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -23,6 +29,7 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "GHT Prostate — Natural Herbal Relief for Men 40+" },
       { name: "description", content: "GHT is a 100% herbal prostate care formula designed to relieve BPH symptoms naturally — without harsh side effects. Trusted across Africa." },
+      { property: "og:image", content: BLOG.pack6 },
     ],
   }),
 });
@@ -39,12 +46,12 @@ const symptoms = [
 ];
 
 const packs = [
-  { bottles: 2, days: "15 days", was: "55,500", now: "45,500", img: pack2.url },
-  { bottles: 3, days: "20 days", was: "80,500", now: "67,500", tag: "Popular", img: pack3.url },
-  { bottles: 4, days: "25 days", was: "95,500", now: "87,500", img: pack4.url },
-  { bottles: 5, days: "30 days", was: "118,500", now: "103,500", img: pack5.url },
-  { bottles: 6, days: "1 month +", was: "140,500", now: "133,500", tag: "Best Value", img: pack6.url },
-  { bottles: 10, days: "2 months — full treatment", was: "250,500", now: "217,500", tag: "Full Treatment", img: pack6.url },
+  { bottles: 2, days: "15 days", was: "55,500", now: "45,500", img: BLOG.pack2 },
+  { bottles: 3, days: "20 days", was: "80,500", now: "67,500", tag: "Popular", img: BLOG.pack3 },
+  { bottles: 4, days: "25 days", was: "95,500", now: "87,500", img: BLOG.pack4 },
+  { bottles: 5, days: "30 days", was: "118,500", now: "103,500", img: BLOG.pack5 },
+  { bottles: 6, days: "1 month +", was: "140,500", now: "133,500", tag: "Best Value", img: BLOG.pack6 },
+  { bottles: 10, days: "2 months — full treatment", was: "250,500", now: "217,500", tag: "Full Treatment", img: BLOG.pack10 },
 ];
 
 const faqs = [
