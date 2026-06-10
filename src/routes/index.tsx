@@ -262,6 +262,9 @@ function Index() {
                     {p.tag}
                   </span>
                 )}
+                <div className={`mb-6 -mx-2 rounded-2xl p-3 flex items-center justify-center ${p.tag === "Best Value" ? "bg-foreground/5" : "bg-primary-foreground/10"}`}>
+                  <img src={p.img} alt={`GHT Prostate ${p.bottles}-bottle pack`} loading="lazy" className="h-40 w-auto object-contain" />
+                </div>
                 <div className="flex items-baseline justify-between mb-2">
                   <h3 className="font-display text-3xl font-semibold">{p.bottles} bottles</h3>
                   <Clock className="w-4 h-4 opacity-60" />
