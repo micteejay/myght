@@ -8,7 +8,7 @@
 export const WHATSAPP_NUMBER = "2347030004503";
 
 // Email address that receives order requests.
-export const ORDER_EMAIL = "gbengafaboya@gmail.com";
+export const ORDER_EMAIL = "ghtorderform@gmail.com";
 
 // --- Derived helpers (do not edit) ---
 
