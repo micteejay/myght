@@ -2,8 +2,11 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/dwwfoeqh/public_html/
-    - /bin/cp -R $DEPLOYPATH $DEPLOYPATH.backup-$(date +%s)
-    - npm install
-    - npm run build
+    - export BACKUP_PATH=$DEPLOYPATH.backup-$(date +%s)
+    - /bin/cp -R $DEPLOYPATH $BACKUP_PATH || exit 1
+    - npm install || { /bin/cp -R $BACKUP_PATH $DEPLOYPATH; exit 1; }
+    - npm run build || { /bin/cp -R $BACKUP_PATH $DEPLOYPATH; exit 1; }
+    - /bin/rm -rf $DEPLOYPATH/*
     - /bin/cp -R build/* $DEPLOYPATH
     - echo "Deployed at $(date)" > $DEPLOYPATH/deployment-status.txt
+    - /bin/rm -rf $BACKUP_PATH
