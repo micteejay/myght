@@ -1,0 +1,19 @@
+---
+deployment:
+  targets:
+    - type: home
+      path: /public_html
+      startup_commands:
+        - npm install
+        - npm run build
+      restart_reload: true
+  documents:
+    - public
+  excluded_paths:
+    - node_modules
+    - .git
+    - src
+    - tests
+    - coverage
+  restart_commands:
+    - npm run start
