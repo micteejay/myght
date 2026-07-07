@@ -70,9 +70,9 @@ const protocol = [
 ];
 
 const packs = [
-  { d: "15 days", b: 3, was: "70,500", now: "60,500" },
-  { d: "30 days", b: 6, was: "130,500", now: "115,000", tag: "Most Chosen" },
-  { d: "45 days", b: 9, was: "190,500", now: "170,000", tag: "Full Protocol" },
+  { d: "15 days", b: 3, was: "70,500", now: "60,500", img: BLOG.pack1 },
+  { d: "30 days", b: 6, was: "130,500", now: "115,000", tag: "Most Chosen", img: BLOG.pack2 },
+  { d: "45 days", b: 9, was: "190,500", now: "170,000", tag: "Full Protocol", img: BLOG.pack3 },
 ];
 
 const faqs = [
