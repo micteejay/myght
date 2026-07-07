@@ -333,7 +333,10 @@ function HypertensionPage() {
               );
               const waLink = `${WA_URL}?text=${waMessage}`;
               return (
-                <div key={p.b} className={`relative rounded-3xl p-10 border ${isFeatured ? "bg-[var(--gold)] text-foreground border-[var(--gold)]" : "bg-primary-foreground/5 border-primary-foreground/10 backdrop-blur"}`}>
+                <div key={p.b} className={`relative rounded-3xl p-8 border ${isFeatured ? "bg-[var(--gold)] text-foreground border-[var(--gold)]" : "bg-primary-foreground/5 border-primary-foreground/10 backdrop-blur"}`}>
+                  <div className="rounded-2xl overflow-hidden mb-6 bg-white/10 aspect-[4/3]">
+                    <img src={p.img} alt={`${p.d} pack — ${p.b} bottles`} loading="lazy" className="w-full h-full object-cover" />
+                  </div>
                   {p.tag && (
                     <span className={`absolute -top-3 left-8 text-xs px-3 py-1 rounded-full font-medium ${isFeatured ? "bg-foreground text-background" : "bg-[var(--coral)] text-white"}`}>
                       {p.tag}
