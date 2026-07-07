@@ -2,7 +2,7 @@ import { WHATSAPP_URL, WHATSAPP_TEL, WHATSAPP_DISPLAY } from "@/config/contact";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 import { OrderButton } from "@/components/OrderDialog";
-import { Check, ShieldCheck, Leaf, Phone, MessageCircle, Star, ArrowRight, Sparkles, Droplet, HeartPulse, Activity, FlaskConical, Pill, PlayCircle } from "lucide-react";
+import { Check, ShieldCheck, Leaf, Phone, MessageCircle, Star, ArrowRight, Sparkles, Droplet, HeartPulse, Activity, FlaskConical, Pill } from "lucide-react";
 
 // Images sourced from the source blog
 const BLOG = {
