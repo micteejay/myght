@@ -2,9 +2,26 @@ import { WHATSAPP_URL, WHATSAPP_TEL, WHATSAPP_DISPLAY } from "@/config/contact";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 import { OrderButton } from "@/components/OrderDialog";
-import { Check, ShieldCheck, Leaf, Phone, MessageCircle, Star, ArrowRight, Sparkles, HeartPulse, Activity, Brain, Pill, AlertTriangle } from "lucide-react";
-import hero from "@/assets/hypertension-hero.jpg";
-import bottles from "@/assets/hypertension-bottles.jpg";
+import { Check, ShieldCheck, Leaf, Phone, MessageCircle, Star, ArrowRight, Sparkles, HeartPulse, Activity, Brain, Pill, AlertTriangle, PlayCircle } from "lucide-react";
+
+// Images & videos sourced from careforhypertensive.blogspot.com blog post.
+const BLOG = {
+  hero: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj9nh2MLNBZIt6bOL6ytG2zx4GmNvHqbaarP9PANJWV0ms6kv10E_UuCPt4XfIEyBf7OxdSm73KGuAjIf1XHvLfhQEO9jTM7j1o5YlPdiJbTgbnLR4tCU53FbOTDHeUWrgFL8mRnnMt2CFACV4UTC040V7D6-sMm_p-YJ0cQzlReXzweEw2vVGZ1NDSz6oH/s1600/HYPERTEN%201.webp",
+  hero2: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWFCwQ07LPv-1f7UjfLWwZ31GPCTH-5Us7tJTQrMJZ_6uBsmWfL7EewHr3Eocqu-RhpyAfP-xXYcSD2gO5L8Ai68ZeN6ff6FnWIoFVHuGpCavSo30r0PF8-lskSgP1_wg9ZIRnvr0lrYd426xCwQJiapFgih6qg8mP8sDS5I5J9j_JYyDpmmIq-ekwQVGq/s1600/HYPERSTIVE%202.jpeg",
+  brain1: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh1CMIIJdG1xzMtx3wKKt3PDqbpCQHkfGIojsIl-NJH9tWAgAvb-ZaHSNSb8MFU6dciPbhy1mhHP-9XYFnDSe6t1qSy1F_YkVpgnGhjtgwkF1jjb4AinFSLUc-jpbnTn1vboo3GJgeLThQRbU7-jkGUT-0VMzqnCQok8ODuVOhNUPY1AobpwW-8R4Bop898/s1600/brain1.jpeg",
+  brain2: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPVucrykv1nJ9bzVlzVw2Gv8lt_U5fRL5ECZFfKb2VYZl4FSTz0EFH5GsDZpcMNiaE9eZh3RyDQe0ijQFihRooGhEAGF4J5Rs-Wxi6MjR2-KHfRFHHiWLEUPmHhZrAa-EJXkQzfX1B4MGI5s4faXH_DgcuX1GyViUCSdNA5HLZbCGuCjFeOJPx3F4VYtmf/s1600/brain2.gif",
+  product1: "https://ghthealthservice.wordpress.com/wp-content/uploads/2025/06/dfbdfbn.jpg?w=823",
+  product2: "https://ghthealthservice.wordpress.com/wp-content/uploads/2025/06/afsgs.jpg?w=804",
+  pack1: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFkGLZ0lBvjLO3_uB9hJIsKGloU9zx3wM8QClgg6uqDIlagEiueIdzDdGbHBrs11dVHeHCqZ8GZjerwqvmILOJFH4M31oUOpaD2Vk3TBEaoHANE4MFsCBLNB3gase745uhqVpRVp6puZAc9pIWYT10gW1anI3xKgK-8-1HM_ChxqZuJjpy7r9tGwTIgPs4/s1600/hyper%201.jpg",
+  pack2: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgr6d0CpjrfhJmCcJaxze790RLurZpt9xTdn5E5QTXrzhNyq117LJmKtNR0-O5EpPzlooQXREhUasZuu1rjYeZJ8P9pyH80uAUp14FLvtdQNJbMVk3BjyzmTihHJu1w0gi5JBV3yDZh_ACgm5nwGVbI-qGD1SpBsgsV9SS0x9_3g4wvRtCz6H_2lF9TSzi7/s1600/hyper%202.jpg",
+  pack3: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivb5qjw9g4twBmmaldYNt5J3nU7WeONeEVlouEkGR6HONQ_0CpmT-6G9nmBQlZHVREC_FenGJPKHs86IRlMiAqqg1kwxYDqcUfTaAzl_QAyUoJkQodcldi9EAWMWexczlceFEcEL8VKjTZbp8osEb8Wp4VSBPt-UZvIazCFyrOYAS6CVQGZiymDLh_M7wf/s1600/hyper3.jpg",
+  video1: "https://www.blogger.com/video.g?token=AD6v5dwJd6p0qLQXiVyHU8zeNtdHbmTln8zrfcwyGqLU8Er1_qXXLncjAdmOdTNC_RBt3kIx5hGhaalHgnU_MNP1T5LMfmdNsLp1oDE3T-p_9VFxdNX5eoOnS63SJGOn_hp0db6AHyQ",
+  video2: "https://www.blogger.com/video.g?token=AD6v5dznWScoMM-AsxgTBlm1jIr3GFt-UDg_Nryiavxv3l4_WXzDzxhE-7u_dVYlXQydlvnzpiy_Mc62R1eqbbI7vzKKG6ge_7cJHFVMvp-V8oGIjLeaNT38_adlWYs63GuStmOgUgg",
+  video3: "https://www.blogger.com/video.g?token=AD6v5dzArPJPVZrHQi5acUFn6LVj_eDMCAEUp1_53RG1Sm3xYvN6eL2KkwzGEEdr3eNHiJjp2QjxaIYxz6fm72cgzNBR1ySz55DovF2sgSTEC6DG8MLHiQn7X-gKZWSvde5Iqnf4YK8",
+  video4: "https://www.blogger.com/video.g?token=AD6v5dw0CAGHB95SDFkFD9POoi1RMpVf6L8HZcivyOjGVcbfaQr9-nYTwGnc6VbCF_dl8TPmdtXuF5fB9vhPZP0c4W2yZ1fAORrlYxC3tvfLN8POBxE7gYDkFNbaFSqqLXDD4Qtr3YY",
+};
+const hero = BLOG.hero;
+const bottles = BLOG.product2;
 
 export const Route = createFileRoute("/hypertension")({
   component: HypertensionPage,
