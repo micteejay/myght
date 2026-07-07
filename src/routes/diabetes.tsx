@@ -2,9 +2,23 @@ import { WHATSAPP_URL, WHATSAPP_TEL, WHATSAPP_DISPLAY } from "@/config/contact";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 import { OrderButton } from "@/components/OrderDialog";
-import { Check, ShieldCheck, Leaf, Phone, MessageCircle, Star, ArrowRight, Sparkles, Droplet, HeartPulse, Activity, FlaskConical, Pill } from "lucide-react";
-import hero from "@/assets/diabetes-hero.jpg";
-import bottles from "@/assets/diabetes-bottles.jpg";
+import { Check, ShieldCheck, Leaf, Phone, MessageCircle, Star, ArrowRight, Sparkles, Droplet, HeartPulse, Activity, FlaskConical, Pill, PlayCircle } from "lucide-react";
+
+// Images sourced from the source blog
+const BLOG = {
+  hero: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKkI3W6Fvx76Z1PfjWRHMuDgH1868JkKUOJ6Ta9m3JLGg1uN8kiuRZSP4dICEd8NUI-vKtOJEcUlX_Y_Aqq_KcB0kAOG83am4Z73xC9yAU4AbTahUiy0GWRv_XYNXJPw0KMdEfsYXQBgC6ElPiOAIf276Q0MqAc2IWOEs3ngAbCeDxAdXlgk6yZ9jOs1uZ/s1024/daiabetes.png",
+  hero2: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjm0nYnp_7NDpYeVg571330TphQffM0O_EZmtkamwC9KszvWe65iYYsTPp_DillRqsR_KqJGAqRAHJQdaCZiA94Z_Y3DA9paRLsYVbfrZ3La-sRRknlA8L9oOM77BY0Vr0l0InNemde3YdqK3VrQ4anN74hZBi5hSYcDYgVodQ0Op_yVR162kdBk6a-aESC/s1024/diabetes%202.webp",
+  product1: "https://ghthealthservice.wordpress.com/wp-content/uploads/2025/06/xbxbx.jpg?w=420",
+  product2: "https://ghthealthservice.wordpress.com/wp-content/uploads/2025/06/sdgdgb.jpg?w=751",
+  product3: "https://ghthealthservice.wordpress.com/wp-content/uploads/2025/06/afsgs-1.jpg?w=804",
+  pack1: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKShehY11f-FibiY697W5mh9ptH60xhEE6rOUVOFekhyphenhyphen76PsD4i4xXZWwTEVKN_UFzqvJqctCHry3f7ZO02emzLi5qnoUgBrnGqXOHvTQ4_EpskHs_pk9vHadwRF9G6xmw3alpyxBInrhd1vfr8xBzKc5t-79_5PeR7jhsbZ43KacQwCYt3pwvTjAUz9-3/s600/diabet%201.jpg",
+  pack2: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3NU-wWNTdGE9pn9zH210YRy07WXtrH4h9A71s1tJmoSEPl910G14ZesfFECau-8fAC7cmtiq0T04sEmvz2FryqyZu5WZSfHuQvoXnz40URut8zUUHc2T02DeY_84CyKaR6lmO0CsavGEXMVB3nuSB-k7rHYWr3xmzctdtdZMypr5UdHFYsyZpL2OKLFTA/s600/diabets%202.jpg",
+  pack3: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBYg341aUJcjtu0LZSNAZH_XL66eKUg5FNUL4yXsHMZL-jjAvQ6xsoe6Iil7Z9eTWE6SjMBNgIuiomyWDkIdbPhBgI2MDCln9QfV-bRDZefux6cAwSotFcM0QugU5aYvpjRzikuAbhRoNTQoLVXpRkYDZZCEsMEDVt1MyCoa6z_TyxaXIC-zncqqxv4eVa/s600/diabets%203.jpg",
+  video1: "https://www.blogger.com/video.g?token=AD6v5dz1ybz18TNjEKgUXX7NprDAEfJBN4EGO-Znj1amWde6nmjKv1svHyON47UsplakIu0_vJ_BKelLl9ogX_3I7Y-o6O9Bg63ZUwl0uZ--7crQHyVQkxCiyrifGuXgsQl4uEKL_Zwt",
+  video2: "https://www.blogger.com/video.g?token=AD6v5dxh0KH9paXreB0FFc4j9SpnbaOEhwbb5vw-dMgmaOrk3MxnSuqHuRFZxEtOHhUZAj7Hj31ZbelMvSodhvtkqYGTMcuHfA7UL4HIh4nqRJaIj74k56RDBCMI-yYFx4FqM_181PI8",
+};
+const hero = BLOG.hero;
+const bottles = BLOG.product2;
 
 export const Route = createFileRoute("/diabetes")({
   component: DiabetesPage,
