@@ -208,8 +208,25 @@ function DiabetesPage() {
             <p className="mt-6 text-lg text-muted-foreground">Three formulations working in synergy — lowering, detoxifying, protecting. A complete pathway, not a single pill.</p>
           </div>
 
-          <div className="rounded-3xl overflow-hidden mb-16 bg-secondary/40">
-            <img src={bottles} alt="DIALESE, MYCO-BALANCE, and CAERITE herbal bottles" width={1280} height={1024} loading="lazy" className="w-full h-auto" />
+          {/* Blog video 1 */}
+          <div className="rounded-3xl overflow-hidden mb-10 bg-black aspect-video">
+            <iframe src={BLOG.video1} className="w-full h-full" allowFullScreen title="Diabetes intro video" />
+          </div>
+
+          <div className="rounded-3xl overflow-hidden mb-10 bg-secondary/40">
+            <img src={BLOG.hero2} alt="Diabetes management essentials" loading="lazy" className="w-full h-auto" />
+          </div>
+
+          {/* Product bottle images from blog */}
+          <div className="grid sm:grid-cols-3 gap-4 mb-10">
+            <img src={BLOG.product1} alt="DIALESE herbal formula" loading="lazy" className="w-full h-auto rounded-2xl bg-secondary/40" />
+            <img src={BLOG.product2} alt="MYCO-BALANCE Softgel" loading="lazy" className="w-full h-auto rounded-2xl bg-secondary/40" />
+            <img src={BLOG.product3} alt="CAERITE heart & artery protector" loading="lazy" className="w-full h-auto rounded-2xl bg-secondary/40" />
+          </div>
+
+          {/* Blog video 2 — the well-researched remedy */}
+          <div className="rounded-3xl overflow-hidden mb-16 bg-black aspect-video">
+            <iframe src={BLOG.video2} className="w-full h-full" allowFullScreen title="Well researched remedy" />
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
