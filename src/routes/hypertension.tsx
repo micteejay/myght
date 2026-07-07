@@ -243,6 +243,21 @@ function HypertensionPage() {
         </div>
       </section>
 
+      {/* BRAIN VISUALS + VIDEO */}
+      <section className="px-4 sm:px-6 pb-16">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
+          <div className="rounded-3xl overflow-hidden border border-border">
+            <img src={BLOG.brain1} alt="Brain and hypertension" loading="lazy" className="w-full h-full object-cover aspect-square" />
+          </div>
+          <div className="rounded-3xl overflow-hidden border border-border">
+            <img src={BLOG.brain2} alt="Blood flow to brain" loading="lazy" className="w-full h-full object-cover aspect-square" />
+          </div>
+          <div className="rounded-3xl overflow-hidden border border-border bg-black aspect-square">
+            <iframe src={BLOG.video2} title="Causes of hypertension" allowFullScreen className="w-full h-full" />
+          </div>
+        </div>
+      </section>
+
       {/* PROTOCOL */}
       <section id="protocol" className="py-16 sm:py-24 px-4 sm:px-6 bg-secondary/40">
         <div className="max-w-7xl mx-auto">
