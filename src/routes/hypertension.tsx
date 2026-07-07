@@ -267,8 +267,16 @@ function HypertensionPage() {
             <p className="mt-6 text-lg text-muted-foreground">Two herbal formulations engineered to work in synergy — one calms the pressure, the other defends the heart.</p>
           </div>
 
-          <div className="rounded-3xl overflow-hidden mb-16">
-            <img src={bottles} alt="HYPERFREE and CAERITE herbal bottles" width={1280} height={1024} loading="lazy" className="w-full h-auto" />
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
+            <div className="rounded-3xl overflow-hidden border border-border">
+              <img src={BLOG.product1} alt="HYPERFREE herbal formula" loading="lazy" className="w-full h-full object-cover aspect-[4/3]" />
+            </div>
+            <div className="rounded-3xl overflow-hidden border border-border">
+              <img src={bottles} alt="CAERITE herbal formula" loading="lazy" className="w-full h-full object-cover aspect-[4/3]" />
+            </div>
+            <div className="rounded-3xl overflow-hidden border border-border bg-black aspect-[4/3]">
+              <iframe src={BLOG.video3} title="How HYPERFREE + CAERITE works" allowFullScreen className="w-full h-full" />
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
