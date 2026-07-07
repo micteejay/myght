@@ -148,7 +148,7 @@ function HypertensionPage() {
 
           <div className="relative animate-float-soft">
             <div className="relative rounded-3xl overflow-hidden shadow-[var(--shadow-elegant)]">
-              <img src={hero} alt="Blood pressure monitor with hibiscus and herbs" width={1280} height={1280} className="w-full h-auto object-cover aspect-square animate-spin-slow" />
+              <img src={hero} alt="Blood pressure monitor with hibiscus and herbs" width={1280} height={1280} className="w-full h-auto object-cover aspect-square" />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl shadow-[var(--shadow-card)] p-5 max-w-[260px] border border-border">
               <div className="flex items-center gap-2 mb-2">
@@ -160,6 +160,19 @@ function HypertensionPage() {
           </div>
         </div>
       </section>
+
+      {/* SECONDARY HERO IMAGE + INTRO VIDEO */}
+      <section className="px-4 sm:px-6 -mt-6 sm:-mt-10 pb-8">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-6">
+          <div className="rounded-3xl overflow-hidden border border-border">
+            <img src={BLOG.hero2} alt="Hypertension awareness" loading="lazy" className="w-full h-full object-cover aspect-[4/3]" />
+          </div>
+          <div className="rounded-3xl overflow-hidden border border-border bg-black aspect-[4/3]">
+            <iframe src={BLOG.video1} title="Hypertension explained" allowFullScreen className="w-full h-full" />
+          </div>
+        </div>
+      </section>
+
 
       {/* DANGERS */}
       <section className="py-16 sm:py-24 px-4 sm:px-6">
