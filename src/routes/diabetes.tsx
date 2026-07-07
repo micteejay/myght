@@ -3,8 +3,22 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 import { OrderButton } from "@/components/OrderDialog";
 import { Check, ShieldCheck, Leaf, Phone, MessageCircle, Star, ArrowRight, Sparkles, Droplet, HeartPulse, Activity, FlaskConical, Pill } from "lucide-react";
-import hero from "@/assets/diabetes-hero.jpg";
-import bottles from "@/assets/diabetes-bottles.jpg";
+
+// Images sourced from the source blog
+const BLOG = {
+  hero: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKkI3W6Fvx76Z1PfjWRHMuDgH1868JkKUOJ6Ta9m3JLGg1uN8kiuRZSP4dICEd8NUI-vKtOJEcUlX_Y_Aqq_KcB0kAOG83am4Z73xC9yAU4AbTahUiy0GWRv_XYNXJPw0KMdEfsYXQBgC6ElPiOAIf276Q0MqAc2IWOEs3ngAbCeDxAdXlgk6yZ9jOs1uZ/s1024/daiabetes.png",
+  hero2: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjm0nYnp_7NDpYeVg571330TphQffM0O_EZmtkamwC9KszvWe65iYYsTPp_DillRqsR_KqJGAqRAHJQdaCZiA94Z_Y3DA9paRLsYVbfrZ3La-sRRknlA8L9oOM77BY0Vr0l0InNemde3YdqK3VrQ4anN74hZBi5hSYcDYgVodQ0Op_yVR162kdBk6a-aESC/s1024/diabetes%202.webp",
+  product1: "https://ghthealthservice.wordpress.com/wp-content/uploads/2025/06/xbxbx.jpg?w=420",
+  product2: "https://ghthealthservice.wordpress.com/wp-content/uploads/2025/06/sdgdgb.jpg?w=751",
+  product3: "https://ghthealthservice.wordpress.com/wp-content/uploads/2025/06/afsgs-1.jpg?w=804",
+  pack1: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKShehY11f-FibiY697W5mh9ptH60xhEE6rOUVOFekhyphenhyphen76PsD4i4xXZWwTEVKN_UFzqvJqctCHry3f7ZO02emzLi5qnoUgBrnGqXOHvTQ4_EpskHs_pk9vHadwRF9G6xmw3alpyxBInrhd1vfr8xBzKc5t-79_5PeR7jhsbZ43KacQwCYt3pwvTjAUz9-3/s600/diabet%201.jpg",
+  pack2: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3NU-wWNTdGE9pn9zH210YRy07WXtrH4h9A71s1tJmoSEPl910G14ZesfFECau-8fAC7cmtiq0T04sEmvz2FryqyZu5WZSfHuQvoXnz40URut8zUUHc2T02DeY_84CyKaR6lmO0CsavGEXMVB3nuSB-k7rHYWr3xmzctdtdZMypr5UdHFYsyZpL2OKLFTA/s600/diabets%202.jpg",
+  pack3: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBYg341aUJcjtu0LZSNAZH_XL66eKUg5FNUL4yXsHMZL-jjAvQ6xsoe6Iil7Z9eTWE6SjMBNgIuiomyWDkIdbPhBgI2MDCln9QfV-bRDZefux6cAwSotFcM0QugU5aYvpjRzikuAbhRoNTQoLVXpRkYDZZCEsMEDVt1MyCoa6z_TyxaXIC-zncqqxv4eVa/s600/diabets%203.jpg",
+  video1: "https://www.blogger.com/video.g?token=AD6v5dz1ybz18TNjEKgUXX7NprDAEfJBN4EGO-Znj1amWde6nmjKv1svHyON47UsplakIu0_vJ_BKelLl9ogX_3I7Y-o6O9Bg63ZUwl0uZ--7crQHyVQkxCiyrifGuXgsQl4uEKL_Zwt",
+  video2: "https://www.blogger.com/video.g?token=AD6v5dxh0KH9paXreB0FFc4j9SpnbaOEhwbb5vw-dMgmaOrk3MxnSuqHuRFZxEtOHhUZAj7Hj31ZbelMvSodhvtkqYGTMcuHfA7UL4HIh4nqRJaIj74k56RDBCMI-yYFx4FqM_181PI8",
+};
+const hero = BLOG.hero;
+const bottles = BLOG.product2;
 
 export const Route = createFileRoute("/diabetes")({
   component: DiabetesPage,
@@ -46,9 +60,9 @@ const protocol = [
 ];
 
 const packs = [
-  { d: "15 days", b: 3, was: "75,000", now: "65,000" },
-  { d: "30 days", b: 6, was: "130,000", now: "122,000", tag: "Most Chosen" },
-  { d: "45 days", b: 9, was: "180,000", now: "168,500", tag: "Full Protocol" },
+  { d: "15 days", b: 3, was: "75,000", now: "65,000", img: BLOG.pack1 },
+  { d: "30 days", b: 6, was: "130,000", now: "122,000", tag: "Most Chosen", img: BLOG.pack2 },
+  { d: "45 days", b: 9, was: "180,000", now: "168,500", tag: "Full Protocol", img: BLOG.pack3 },
 ];
 
 const faqs = [
@@ -194,8 +208,25 @@ function DiabetesPage() {
             <p className="mt-6 text-lg text-muted-foreground">Three formulations working in synergy — lowering, detoxifying, protecting. A complete pathway, not a single pill.</p>
           </div>
 
-          <div className="rounded-3xl overflow-hidden mb-16 bg-secondary/40">
-            <img src={bottles} alt="DIALESE, MYCO-BALANCE, and CAERITE herbal bottles" width={1280} height={1024} loading="lazy" className="w-full h-auto" />
+          {/* Blog video 1 */}
+          <div className="rounded-3xl overflow-hidden mb-10 bg-black aspect-video">
+            <iframe src={BLOG.video1} className="w-full h-full" allowFullScreen title="Diabetes intro video" />
+          </div>
+
+          <div className="rounded-3xl overflow-hidden mb-10 bg-secondary/40">
+            <img src={BLOG.hero2} alt="Diabetes management essentials" loading="lazy" className="w-full h-auto" />
+          </div>
+
+          {/* Product bottle images from blog */}
+          <div className="grid sm:grid-cols-3 gap-4 mb-10">
+            <img src={BLOG.product1} alt="DIALESE herbal formula" loading="lazy" className="w-full h-auto rounded-2xl bg-secondary/40" />
+            <img src={BLOG.product2} alt="MYCO-BALANCE Softgel" loading="lazy" className="w-full h-auto rounded-2xl bg-secondary/40" />
+            <img src={BLOG.product3} alt="CAERITE heart & artery protector" loading="lazy" className="w-full h-auto rounded-2xl bg-secondary/40" />
+          </div>
+
+          {/* Blog video 2 — the well-researched remedy */}
+          <div className="rounded-3xl overflow-hidden mb-16 bg-black aspect-video">
+            <iframe src={BLOG.video2} className="w-full h-full" allowFullScreen title="Well researched remedy" />
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -254,6 +285,9 @@ function DiabetesPage() {
                       {p.tag}
                     </span>
                   )}
+                  <div className="rounded-2xl overflow-hidden mb-6 aspect-[4/3] bg-black/10">
+                    <img src={p.img} alt={`${p.d} pack — ${p.b} bottles`} loading="lazy" className="w-full h-full object-cover" />
+                  </div>
                   <div className="flex items-center gap-2 mb-2">
                     <Pill className={`w-4 h-4 ${isFeatured ? "text-foreground/60" : "text-primary-foreground/60"}`} />
                     <span className={`text-sm ${isFeatured ? "text-foreground/70" : "text-primary-foreground/60"}`}>{p.b} bottles</span>
