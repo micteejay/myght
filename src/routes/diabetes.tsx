@@ -285,6 +285,9 @@ function DiabetesPage() {
                       {p.tag}
                     </span>
                   )}
+                  <div className="rounded-2xl overflow-hidden mb-6 aspect-[4/3] bg-black/10">
+                    <img src={p.img} alt={`${p.d} pack — ${p.b} bottles`} loading="lazy" className="w-full h-full object-cover" />
+                  </div>
                   <div className="flex items-center gap-2 mb-2">
                     <Pill className={`w-4 h-4 ${isFeatured ? "text-foreground/60" : "text-primary-foreground/60"}`} />
                     <span className={`text-sm ${isFeatured ? "text-foreground/70" : "text-primary-foreground/60"}`}>{p.b} bottles</span>
