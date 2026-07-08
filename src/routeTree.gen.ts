@@ -9,11 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ProstateRouteImport } from './routes/prostate'
 import { Route as HypertensionRouteImport } from './routes/hypertension'
 import { Route as FineHealthRouteImport } from './routes/fine-health'
 import { Route as DiabetesRouteImport } from './routes/diabetes'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ProstateRoute = ProstateRouteImport.update({
+  id: '/prostate',
+  path: '/prostate',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HypertensionRoute = HypertensionRouteImport.update({
   id: '/hypertension',
   path: '/hypertension',
@@ -40,12 +46,14 @@ export interface FileRoutesByFullPath {
   '/diabetes': typeof DiabetesRoute
   '/fine-health': typeof FineHealthRoute
   '/hypertension': typeof HypertensionRoute
+  '/prostate': typeof ProstateRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/diabetes': typeof DiabetesRoute
   '/fine-health': typeof FineHealthRoute
   '/hypertension': typeof HypertensionRoute
+  '/prostate': typeof ProstateRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,20 @@ export interface FileRoutesById {
   '/diabetes': typeof DiabetesRoute
   '/fine-health': typeof FineHealthRoute
   '/hypertension': typeof HypertensionRoute
+  '/prostate': typeof ProstateRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/diabetes' | '/fine-health' | '/hypertension'
+  fullPaths: '/' | '/diabetes' | '/fine-health' | '/hypertension' | '/prostate'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/diabetes' | '/fine-health' | '/hypertension'
-  id: '__root__' | '/' | '/diabetes' | '/fine-health' | '/hypertension'
+  to: '/' | '/diabetes' | '/fine-health' | '/hypertension' | '/prostate'
+  id:
+    | '__root__'
+    | '/'
+    | '/diabetes'
+    | '/fine-health'
+    | '/hypertension'
+    | '/prostate'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,10 +82,18 @@ export interface RootRouteChildren {
   DiabetesRoute: typeof DiabetesRoute
   FineHealthRoute: typeof FineHealthRoute
   HypertensionRoute: typeof HypertensionRoute
+  ProstateRoute: typeof ProstateRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/prostate': {
+      id: '/prostate'
+      path: '/prostate'
+      fullPath: '/prostate'
+      preLoaderRoute: typeof ProstateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/hypertension': {
       id: '/hypertension'
       path: '/hypertension'
@@ -107,6 +130,7 @@ const rootRouteChildren: RootRouteChildren = {
   DiabetesRoute: DiabetesRoute,
   FineHealthRoute: FineHealthRoute,
   HypertensionRoute: HypertensionRoute,
+  ProstateRoute: ProstateRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
